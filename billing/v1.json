@@ -1,0 +1,12 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Billing Api v1",
+    "version": "v1"
+  },
+  "host": "billing.roblox.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": { }
+}

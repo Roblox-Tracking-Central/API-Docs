@@ -1,0 +1,12 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Chat Api v1.0",
+    "version": "v1.0"
+  },
+  "host": "chat.roblox.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": { }
+}

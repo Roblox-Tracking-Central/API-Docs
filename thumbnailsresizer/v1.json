@@ -1,0 +1,77 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ThumbnailsResizer Api v1",
+    "version": "v1"
+  },
+  "host": "thumbnailsresizer.roblox.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v1/resize/{hash}/{width}/{height}/{type}/{format}/{filterType}": {
+      "get": {
+        "tags": [
+          "Resize"
+        ],
+        "summary": "Resizes larger thumbnails to specified size and format",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "description": "Hash of larger thumbnail",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "width",
+            "description": "Desired width of thumbnail",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "height",
+            "description": "Desired height of thumbnail",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "type",
+            "description": "Thumbnail Type",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "format",
+            "description": "Desired image format of the thumbnail",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "filterType",
+            "description": "E.g. is output circular",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Resize:Index"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "GameInternationalization Api v2",
+    "version": "v2"
+  },
+  "host": "gameinternationalization.roblox.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v2/supported-languages/games/{gameId}": {
+      "get": {
+        "tags": [
+          "SupportedLanguagesV2"
+        ],
+        "summary": "Get the supported languages for a game.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "gameId",
+            "description": "The id of the game.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Web.WebAPI.Models.ApiArrayResponse[Roblox.GameInternationalization.Api.LanguageWithLocales]"
+            }
+          },
+          "400": {
+            "description": "14: Invalid game id"
+          },
+          "503": {
+            "description": "17: Feature is disabled"
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "SupportedLanguagesV2:GetSupportedLanguagesForGame"
+          ]
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Roblox.GameInternationalization.Api.Language": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "nativeName": {
+          "type": "string"
+        },
+        "languageCode": {
+          "type": "string"
+        }
+      }
+    },
+    "Roblox.GameInternationalization.Api.LanguageWithLocales": {
+      "type": "object",
+      "properties": {
+        "languageFamily": {
+          "$ref": "#/definitions/Roblox.GameInternationalization.Api.Language"
+        },
+        "childLocales": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Roblox.Localization.Client.SupportedLocale"
+          }
+        }
+      }
+    },
+    "Roblox.Localization.Client.LanguageFamily": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "nativeName": {
+          "type": "string"
+        },
+        "languageCode": {
+          "type": "string"
+        },
+        "isRightToLeft": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Roblox.Localization.Client.SupportedLocale": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "locale": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "type": "integer"
+        },
+        "localeCode": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "nativeName": {
+          "type": "string"
+        },
+        "language": {
+          "$ref": "#/definitions/Roblox.Localization.Client.LanguageFamily"
+        }
+      }
+    },
+    "Roblox.Web.WebAPI.Models.ApiArrayResponse[Roblox.GameInternationalization.Api.LanguageWithLocales]": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Roblox.GameInternationalization.Api.LanguageWithLocales"
+          }
+        }
+      }
+    }
+  }
+}

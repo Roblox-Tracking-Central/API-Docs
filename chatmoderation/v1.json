@@ -1,0 +1,12 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ChatModeration Api v1",
+    "version": "v1"
+  },
+  "host": "chatmoderation.roblox.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": { }
+}

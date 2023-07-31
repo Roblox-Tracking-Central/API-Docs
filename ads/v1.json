@@ -1,0 +1,231 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Ads Api v1",
+    "version": "v1"
+  },
+  "host": "ads.roblox.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v1/user-ads/assets/create": {
+      "post": {
+        "tags": [
+          "UserAds"
+        ],
+        "summary": "Creates a user ad for an asset.",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "assetId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "formData",
+            "name": "name",
+            "description": "The user input ad name.",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Files",
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "1: Insufficient permissions\r\n2: Ad target is not approved\r\n3: Floodchecked\r\n4: Missing image\r\n5: Invalid image format\r\n6: Invalid image size\r\n7: Ad name was filtered\r\n8: Ad target does not exist\r\n10: Invalid ad name"
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request."
+          },
+          "403": {
+            "description": "0: Token Validation Failed"
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "UserAds:CreateAssetUserAd"
+          ]
+        }
+      }
+    },
+    "/v1/user-ads/game-passes/create": {
+      "post": {
+        "tags": [
+          "UserAds"
+        ],
+        "summary": "Creates a user ad for a game pass.",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "gamePassId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "formData",
+            "name": "name",
+            "description": "The user input ad name.",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Files",
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "1: Insufficient permissions\r\n2: Ad target is not approved\r\n3: Floodchecked\r\n4: Missing image\r\n5: Invalid image format\r\n6: Invalid image size\r\n7: Ad name was filtered\r\n8: Ad target does not exist\r\n10: Invalid ad name"
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request."
+          },
+          "403": {
+            "description": "0: Token Validation Failed"
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "UserAds:CreateGamePassUserAd"
+          ]
+        }
+      }
+    },
+    "/v1/user-ads/groups/create": {
+      "post": {
+        "tags": [
+          "UserAds"
+        ],
+        "summary": "Creates a user ad for a group.",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "groupId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "formData",
+            "name": "name",
+            "description": "The user input ad name.",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Files",
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "1: Insufficient permissions\r\n2: Ad target is not approved\r\n3: Floodchecked\r\n4: Missing image\r\n5: Invalid image format\r\n6: Invalid image size\r\n7: Ad name was filtered\r\n8: Ad target does not exist\r\n10: Invalid ad name"
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request."
+          },
+          "403": {
+            "description": "0: Token Validation Failed"
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "UserAds:CreateGroupUserAd"
+          ]
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Roblox.Web.WebApi.FormData.IUploadedFile": {
+      "type": "file",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "Stream": {
+          "$ref": "#/definitions/System.IO.Stream"
+        },
+        "ContentEncoding": {
+          "format": "int32",
+          "description": " ['None' = 0, 'GZip' = 1, 'Deflate' = 2, 'Brotli' = 4, 'All' = -1]",
+          "enum": [
+            0,
+            1,
+            2,
+            4,
+            -1
+          ],
+          "type": "integer",
+          "readOnly": true
+        }
+      }
+    },
+    "System.IO.Stream": {
+      "type": "object",
+      "properties": {
+        "CanRead": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "CanWrite": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "CanSeek": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "CanTimeout": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "Length": {
+          "format": "int64",
+          "type": "integer",
+          "readOnly": true
+        },
+        "Position": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "ReadTimeout": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "WriteTimeout": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

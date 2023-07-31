@@ -1,0 +1,94 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Followings Api v2",
+    "version": "v2"
+  },
+  "host": "followings.roblox.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v2/users/{userId}/universes": {
+      "get": {
+        "tags": [
+          "UsersV2"
+        ],
+        "summary": "Gets all universes followed by a user.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "The user ID.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Followings.Api.Models.FollowsByTypeResponse"
+            }
+          },
+          "403": {
+            "description": "User is not authorized for this action."
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "UsersV2:GetUniversesFollowedByUser"
+          ]
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Roblox.Followings.Api.Models.FollowsByTypeResponse": {
+      "description": "Data model containing collection of all followed sources of a specific type.",
+      "type": "object",
+      "properties": {
+        "followerType": {
+          "format": "int32",
+          "description": "Type of the follower entity. ['Invalid' = 0, 'User' = 1]",
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer"
+        },
+        "followerId": {
+          "format": "int64",
+          "description": "ID of the follower entity.",
+          "type": "integer"
+        },
+        "sourceType": {
+          "format": "int32",
+          "description": "Type of the source entity. ['Invalid' = 0, 'Universe' = 1]",
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer"
+        },
+        "followedSources": {
+          "description": "Followed sources: map of (source ID => follow date)",
+          "type": "object",
+          "additionalProperties": {
+            "format": "date-time",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

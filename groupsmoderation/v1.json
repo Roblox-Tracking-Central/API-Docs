@@ -1,0 +1,12 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "GroupsModeration Api v1",
+    "version": "v1"
+  },
+  "host": "groupsmoderation.roblox.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": { }
+}
