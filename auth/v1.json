@@ -1070,9 +1070,29 @@
           "ExternalIdentitiesGateway"
         ],
         "summary": "Logins in a user to Roblox, then links the Roblox account to the external provider ID",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Request.ExternalLoginAndLinkRequest"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.LoginResponse"
+            }
           },
           "403": {
             "description": "0: Token Validation Failed"
@@ -1092,6 +1112,20 @@
           "ExternalIdentitiesGateway"
         ],
         "summary": "Signs a user up for Roblox and links the account to the authenticated external provider ID",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Request.ExternalSignupRequest"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -2155,10 +2189,97 @@
         }
       }
     },
+    "Roblox.Authentication.Api.Models.Request.ExternalLoginAndLinkRequest": {
+      "description": "Model for External Login and Link requests",
+      "type": "object",
+      "properties": {
+        "ctype": {
+          "format": "int32",
+          "description": "Credentials type Roblox.Platform.Authentication.CredentialsType. ['Email' = 0, 'Username' = 1, 'PhoneNumber' = 2, 'EmailOtpSessionToken' = 3, 'AuthToken' = 4]",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "cvalue": {
+          "description": "Credentials value.",
+          "type": "string"
+        },
+        "password": {
+          "description": "Roblox Password",
+          "type": "string"
+        },
+        "authenticationProof": {
+          "description": "Primary authentication token. This should be all most providers need. \r\nIf something else is needed, it could probably be included in the additional info payload.",
+          "type": "string"
+        },
+        "identityProvider": {
+          "format": "int32",
+          "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2]",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer"
+        },
+        "additionalInfoPayload": {
+          "description": "External provider specific additional info payload in json",
+          "type": "object",
+          "additionalProperties": { }
+        }
+      }
+    },
     "Roblox.Authentication.Api.Models.Request.ExternalLoginRequest": {
       "description": "Model for External Login requests",
       "type": "object",
       "properties": {
+        "authenticationProof": {
+          "description": "Primary authentication token. This should be all most providers need. \r\nIf something else is needed, it could probably be included in the additional info payload.",
+          "type": "string"
+        },
+        "identityProvider": {
+          "format": "int32",
+          "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2]",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer"
+        },
+        "additionalInfoPayload": {
+          "description": "External provider specific additional info payload in json",
+          "type": "object",
+          "additionalProperties": { }
+        }
+      }
+    },
+    "Roblox.Authentication.Api.Models.Request.ExternalSignupRequest": {
+      "description": "Model for External Signup requests",
+      "type": "object",
+      "properties": {
+        "username": {
+          "description": "Signup username.",
+          "type": "string"
+        },
+        "password": {
+          "description": "Signup password.",
+          "type": "string"
+        },
+        "birthday": {
+          "format": "date-time",
+          "description": "Signup birthday.",
+          "type": "string"
+        },
+        "locale": {
+          "description": "Locale",
+          "type": "string"
+        },
         "authenticationProof": {
           "description": "Primary authentication token. This should be all most providers need. \r\nIf something else is needed, it could probably be included in the additional info payload.",
           "type": "string"
