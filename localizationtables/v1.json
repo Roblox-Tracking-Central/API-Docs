@@ -1301,10 +1301,6 @@
         },
         "translator": {
           "$ref": "#/definitions/Roblox.LocalizationTables.Api.Translator"
-        },
-        "feedbackCount": {
-          "format": "int32",
-          "type": "integer"
         }
       }
     },
