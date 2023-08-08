@@ -78,10 +78,9 @@
             "name": "role",
             "description": "The Roblox.GameLocalization.Client.GameLocalizationRoles.GameLocalizationRoleType",
             "required": true,
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
-              0
+              "translator"
             ]
           }
         ],
@@ -129,10 +128,9 @@
             "name": "role",
             "description": "The Roblox.GameLocalization.Client.GameLocalizationRoles.GameLocalizationRoleType",
             "required": true,
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
-              0
+              "translator"
             ]
           },
           {
@@ -247,14 +245,13 @@
       "type": "object",
       "properties": {
         "assigneeType": {
-          "format": "int32",
           "description": " ['User' = 0, 'Group' = 1, 'GroupRole' = 2]",
           "enum": [
-            0,
-            1,
-            2
+            "user",
+            "group",
+            "groupRole"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "id": {
           "format": "int64",
@@ -285,14 +282,13 @@
           "type": "string"
         },
         "type": {
-          "format": "int32",
           "description": " ['User' = 0, 'Group' = 1, 'GroupRole' = 2]",
           "enum": [
-            0,
-            1,
-            2
+            "user",
+            "group",
+            "groupRole"
           ],
-          "type": "integer"
+          "type": "string"
         }
       }
     },
@@ -327,22 +323,20 @@
           "type": "integer"
         },
         "assigneeType": {
-          "format": "int32",
           "description": "The type of the assignee ['User' = 0, 'Group' = 1, 'GroupRole' = 2]",
           "enum": [
-            0,
-            1,
-            2
+            "user",
+            "group",
+            "groupRole"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "role": {
-          "format": "int32",
           "description": "The role to be assigned or revoked ['Translator' = 0]",
           "enum": [
-            0
+            "translator"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "revoke": {
           "description": "To assign or to revoke",
