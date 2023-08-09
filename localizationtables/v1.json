@@ -735,12 +735,11 @@
           "type": "string"
         },
         "ownerType": {
-          "format": "int32",
           "enum": [
-            0,
-            1
+            "User",
+            "Group"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "ownerId": {
           "format": "int64",
@@ -778,13 +777,12 @@
           "type": "integer"
         },
         "sortOrder": {
-          "format": "int32",
           "description": "In which order the data is sorted. ['Asc' = 1, 'Desc' = 2]",
           "enum": [
-            1,
-            2
+            "Asc",
+            "Desc"
           ],
-          "type": "integer"
+          "type": "string"
         }
       }
     },
@@ -906,16 +904,15 @@
           "description": "A set of translation feedback reasons for the given entry identifier.",
           "type": "array",
           "items": {
-            "format": "int32",
             "description": "Enum for translation feedback reason. ['None' = 0, 'Untranslated' = 1, 'Inaccurate' = 2, 'SpellingOrGrammar' = 3, 'Inappropriate' = 4]",
             "enum": [
-              0,
-              1,
-              2,
-              3,
-              4
+              "None",
+              "Untranslated",
+              "Inaccurate",
+              "SpellingOrGrammar",
+              "Inappropriate"
             ],
-            "type": "integer"
+            "type": "string"
           }
         },
         "robloxSuggestionText": {
@@ -1147,13 +1144,12 @@
           "type": "string"
         },
         "ownerType": {
-          "format": "int32",
           "description": "Enum for valid OwnerTypes. ['User' = 0, 'Group' = 1]",
           "enum": [
-            0,
-            1
+            "User",
+            "Group"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "ownerId": {
           "format": "int64",
@@ -1334,13 +1330,12 @@
           "type": "integer"
         },
         "agentType": {
-          "format": "int32",
           "description": " ['User' = 0, 'Automation' = 1]",
           "enum": [
-            0,
-            1
+            "User",
+            "Automation"
           ],
-          "type": "integer"
+          "type": "string"
         }
       }
     },

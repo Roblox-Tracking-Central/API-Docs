@@ -542,11 +542,10 @@
             "name": "languageOrLocaleType",
             "description": "Indicates whether the languageOrLocaleCode represents a language or locale.",
             "required": true,
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
-              0,
-              1
+              "Language",
+              "Locale"
             ]
           }
         ],
@@ -1298,13 +1297,12 @@
             "name": "reportType",
             "description": "The report type",
             "required": true,
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "enum": [
-              0,
-              1,
-              2,
-              3
+              "GameTranslationStatus",
+              "GameTranslationStatusForTranslatorGroup",
+              "GameTranslationStatusForTranslator",
+              "Test"
             ]
           },
           {
@@ -3695,16 +3693,15 @@
           "type": "string"
         },
         "state": {
-          "format": "int32",
           "description": "Enum for image status. ['Approved' = 0, 'PendingReview' = 1, 'UnAvailable' = 2, 'Rejected' = 3, 'Error' = 4]",
           "enum": [
-            0,
-            1,
-            2,
-            3,
-            4
+            "Approved",
+            "PendingReview",
+            "UnAvailable",
+            "Rejected",
+            "Error"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "languageCode": {
           "type": "string"
@@ -3722,16 +3719,15 @@
           "type": "string"
         },
         "state": {
-          "format": "int32",
           "description": "Enum for image status. ['Approved' = 0, 'PendingReview' = 1, 'UnAvailable' = 2, 'Rejected' = 3, 'Error' = 4]",
           "enum": [
-            0,
-            1,
-            2,
-            3,
-            4
+            "Approved",
+            "PendingReview",
+            "UnAvailable",
+            "Rejected",
+            "Error"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "languageCode": {
           "type": "string"
@@ -3748,16 +3744,15 @@
           "type": "string"
         },
         "state": {
-          "format": "int32",
           "description": "Enum for image status. ['Approved' = 0, 'PendingReview' = 1, 'UnAvailable' = 2, 'Rejected' = 3, 'Error' = 4]",
           "enum": [
-            0,
-            1,
-            2,
-            3,
-            4
+            "Approved",
+            "PendingReview",
+            "UnAvailable",
+            "Rejected",
+            "Error"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "languageCode": {
           "type": "string"
@@ -3775,16 +3770,15 @@
           "type": "string"
         },
         "state": {
-          "format": "int32",
           "description": "Enum for image status. ['Approved' = 0, 'PendingReview' = 1, 'UnAvailable' = 2, 'Rejected' = 3, 'Error' = 4]",
           "enum": [
-            0,
-            1,
-            2,
-            3,
-            4
+            "Approved",
+            "PendingReview",
+            "UnAvailable",
+            "Rejected",
+            "Error"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "languageCode": {
           "type": "string"
@@ -3810,13 +3804,12 @@
       "type": "object",
       "properties": {
         "requestType": {
-          "format": "int32",
           "description": "The enum representing the type of request while requesting name/description history ['Name' = 0, 'Description' = 1]",
           "enum": [
-            0,
-            1
+            "Name",
+            "Description"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "languageCode": {
           "type": "string"
@@ -3829,13 +3822,12 @@
           "type": "integer"
         },
         "sortOrder": {
-          "format": "int32",
           "description": " ['Asc' = 1, 'Desc' = 2]",
           "enum": [
-            1,
-            2
+            "Asc",
+            "Desc"
           ],
-          "type": "integer"
+          "type": "string"
         }
       }
     },
@@ -3903,13 +3895,12 @@
           "type": "string"
         },
         "languageOrLocaleType": {
-          "format": "int32",
           "description": "An indicator that says whether the passed in language/locale code represents a language or locale. ['Language' = 0, 'Locale' = 1]",
           "enum": [
-            0,
-            1
+            "Language",
+            "Locale"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "games": {
           "description": "Info for the requested games, including their translation counts for the specified language or locale.",
@@ -3962,13 +3953,12 @@
           "type": "string"
         },
         "languageCodeType": {
-          "format": "int32",
           "description": "An enum to distinguish between locale codes and language codes. ['Language' = 0, 'Locale' = 1]",
           "enum": [
-            0,
-            1
+            "Language",
+            "Locale"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "languageCode": {
           "type": "string"
@@ -3979,13 +3969,12 @@
       "type": "object",
       "properties": {
         "languageCodeType": {
-          "format": "int32",
           "description": "The language code type. ['Language' = 0, 'Locale' = 1]",
           "enum": [
-            0,
-            1
+            "Language",
+            "Locale"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "languageCode": {
           "description": "The language code.",
@@ -4019,16 +4008,15 @@
           "type": "string"
         },
         "state": {
-          "format": "int32",
           "description": "Enum for image status. ['Approved' = 0, 'PendingReview' = 1, 'UnAvailable' = 2, 'Rejected' = 3, 'Error' = 4]",
           "enum": [
-            0,
-            1,
-            2,
-            3,
-            4
+            "Approved",
+            "PendingReview",
+            "UnAvailable",
+            "Rejected",
+            "Error"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "mediaAssetUrl": {
           "type": "string"
@@ -4109,13 +4097,12 @@
       "type": "object",
       "properties": {
         "languageCodeType": {
-          "format": "int32",
           "description": "The language code type. ['Language' = 0, 'Locale' = 1]",
           "enum": [
-            0,
-            1
+            "Language",
+            "Locale"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "languageCode": {
           "description": "The language code for the language to edit.",
@@ -4154,15 +4141,14 @@
           "type": "string"
         },
         "reportType": {
-          "format": "int32",
           "description": "The report type ['GameTranslationStatus' = 0, 'GameTranslationStatusForTranslatorGroup' = 1, 'GameTranslationStatusForTranslator' = 2, 'Test' = 3]",
           "enum": [
-            0,
-            1,
-            2,
-            3
+            "GameTranslationStatus",
+            "GameTranslationStatusForTranslatorGroup",
+            "GameTranslationStatusForTranslator",
+            "Test"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "reportSubjectTargetId": {
           "format": "int64",
@@ -4175,14 +4161,13 @@
       "type": "object",
       "properties": {
         "reportGenerationStatus": {
-          "format": "int32",
           "description": " ['InProgress' = 0, 'Ready' = 1, 'Unavailable' = 2]",
           "enum": [
-            0,
-            1,
-            2
+            "inProgress",
+            "ready",
+            "unavailable"
           ],
-          "type": "integer"
+          "type": "string"
         }
       }
     },
@@ -4275,21 +4260,19 @@
           "type": "integer"
         },
         "translationStatus": {
-          "format": "int32",
           "description": "The enum representing a translation status. ['Approved' = 0]",
           "enum": [
-            0
+            "Approved"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "translatorType": {
-          "format": "int32",
           "description": "Gets or sets the type of the translator associated with the count, or `null` if the count is not associated with a specific type of translator.",
           "enum": [
-            0,
-            1
+            "Automation",
+            "User"
           ],
-          "type": "integer"
+          "type": "string"
         }
       }
     },
@@ -4298,12 +4281,11 @@
       "type": "object",
       "properties": {
         "category": {
-          "format": "int32",
           "description": "The category of the translation counts. ['InGameContent' = 0]",
           "enum": [
-            0
+            "InGameContent"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "translationCounts": {
           "description": "The translation counts.",
@@ -4329,18 +4311,17 @@
           "type": "integer"
         },
         "status": {
-          "format": "int32",
           "description": "The status of the response for the requested game. ['LanguageOrLocaleSupportedForGame' = 0, 'LanguageOrLocaleNotSupportedForGame' = 1, 'LanguageOrLocaleIsSource' = 2, 'InsufficientPermission' = 3, 'GameDoesNotExist' = 4, 'GameDoesNotHaveTable' = 5, 'UnknownError' = 6]",
           "enum": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6
+            "LanguageOrLocaleSupportedForGame",
+            "LanguageOrLocaleNotSupportedForGame",
+            "LanguageOrLocaleIsSource",
+            "InsufficientPermission",
+            "GameDoesNotExist",
+            "GameDoesNotHaveTable",
+            "UnknownError"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "categories": {
           "description": "Categories of translation counts.",
@@ -4355,13 +4336,12 @@
       "type": "object",
       "properties": {
         "status": {
-          "format": "int32",
           "description": "The status of the response for the requested game. ['Success' = 1, 'LanguageOrLocaleNotSupportedForGame' = 2]",
           "enum": [
-            1,
-            2
+            "Success",
+            "LanguageOrLocaleNotSupportedForGame"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "categories": {
           "description": "Categories of translation counts.",
@@ -4374,13 +4354,12 @@
           "type": "string"
         },
         "languageCodeType": {
-          "format": "int32",
           "description": "An enum to distinguish between locale codes and language codes. ['Language' = 0, 'Locale' = 1]",
           "enum": [
-            0,
-            1
+            "Language",
+            "Locale"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "languageCode": {
           "type": "string"
@@ -4413,13 +4392,12 @@
           "type": "integer"
         },
         "agentType": {
-          "format": "int32",
           "description": " ['User' = 0, 'Automation' = 1]",
           "enum": [
-            0,
-            1
+            "User",
+            "Automation"
           ],
-          "type": "integer"
+          "type": "string"
         }
       }
     },
@@ -4703,14 +4681,13 @@
       "type": "object",
       "properties": {
         "settingType": {
-          "format": "int32",
           "description": " ['LanguageFamily' = 0, 'SupportedLocale' = 1, 'SourceOrTranslation' = 2]",
           "enum": [
-            0,
-            1,
-            2
+            "LanguageFamily",
+            "SupportedLocale",
+            "SourceOrTranslation"
           ],
-          "type": "integer"
+          "type": "string"
         },
         "settingTargetId": {
           "format": "int64",
@@ -4831,16 +4808,15 @@
           "$ref": "#/definitions/System.IO.Stream"
         },
         "ContentEncoding": {
-          "format": "int32",
           "description": " ['None' = 0, 'GZip' = 1, 'Deflate' = 2, 'Brotli' = 4, 'All' = -1]",
           "enum": [
-            0,
-            1,
-            2,
-            4,
-            -1
+            "None",
+            "GZip",
+            "Deflate",
+            "Brotli",
+            "All"
           ],
-          "type": "integer",
+          "type": "string",
           "readOnly": true
         }
       }
