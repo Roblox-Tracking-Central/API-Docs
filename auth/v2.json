@@ -1057,7 +1057,7 @@
             }
           },
           "400": {
-            "description": "Bad request\r\n16: User agreement ids are null."
+            "description": "Bad request\r\n16: User agreement ids are null.\r\n21: Empty account switch blob required"
           },
           "500": {
             "description": "Internal server error\r\n15: Insert acceptances failed."
