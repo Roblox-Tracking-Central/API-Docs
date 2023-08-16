@@ -1443,6 +1443,11 @@
           "description": "The id",
           "type": "integer"
         },
+        "universeId": {
+          "format": "int64",
+          "description": "The universe id of the outfit, null when outfit is not created in-experience",
+          "type": "integer"
+        },
         "name": {
           "description": "The name",
           "type": "string"
@@ -1471,6 +1476,10 @@
         "isEditable": {
           "description": "Whether the outfit can be edited by the user",
           "type": "boolean"
+        },
+        "moderationStatus": {
+          "description": "The moderation status of the outfit, not applicable when outfit is created outside experience",
+          "type": "string"
         }
       }
     },
@@ -1521,11 +1530,12 @@
         },
         "outfitType": {
           "format": "int32",
-          "description": "The type of outfit ['Invalid' = 0, 'Avatar' = 1, 'DynamicHead' = 2]",
+          "description": "The type of outfit ['Invalid' = 0, 'Avatar' = 1, 'DynamicHead' = 2, 'InExperienceBody' = 3]",
           "enum": [
             0,
             1,
-            2
+            2,
+            3
           ],
           "type": "integer"
         }

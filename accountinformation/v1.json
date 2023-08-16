@@ -1036,10 +1036,6 @@
         "shouldDisplaySessionManagement": {
           "description": "Whether to display Session Management.",
           "type": "boolean"
-        },
-        "shouldUseSecurityReactUI": {
-          "description": "Whether to use react version of security tab in settings.",
-          "type": "boolean"
         }
       }
     },
