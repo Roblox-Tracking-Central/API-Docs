@@ -1066,7 +1066,7 @@
             "description": "Service unavailable"
           },
           "403": {
-            "description": "0: Token Validation Failed\r\n2: Captcha Failed.\r\n4: Invalid Birthday.\r\n5: Invalid Username.\r\n6: Username already taken.\r\n7: Invalid Password.\r\n8: Password and Username are same.\r\n9: Password is too simple.\r\n10: Email is invalid.\r\n11: Asset is invalid.\r\n12: Too many attempts. Please wait a bit.\r\n17: One time Passcode session was not valid"
+            "description": "0: Token Validation Failed\r\n2: Captcha Failed.\r\n4: Invalid Birthday.\r\n5: Invalid Username.\r\n6: Username already taken.\r\n7: Invalid Password.\r\n8: Password and Username are same.\r\n9: Password is too simple.\r\n10: Email is invalid.\r\n11: Asset is invalid.\r\n12: Too many attempts. Please wait a bit.\r\n17: One time Passcode session was not valid\r\n22: Maximum logged in accounts limit reached."
           },
           "429": {
             "description": "3: Too many attempts. Please wait a bit."
