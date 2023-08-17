@@ -53,7 +53,7 @@
             "description": "1: User is invalid.\r\n5: Invalid two step verification ticket.\r\n10: Invalid verification token."
           },
           "403": {
-            "description": "0: Token Validation Failed\r\n11: Maxium logged in accounts limit reached."
+            "description": "0: Token Validation Failed"
           }
         },
         "properties": {
