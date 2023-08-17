@@ -1339,6 +1339,211 @@
         }
       }
     },
+    "/v1/passkey/DeleteCredentialBatch": {
+      "post": {
+        "tags": [
+          "Passkeys"
+        ],
+        "summary": "Disables a batch of credentials for the specified user.",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "The request body!:DisableTwoStepVerificationRequest.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Request.DeletePasskeysRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Web.WebAPI.ApiEmptyResponseModel"
+            }
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request.\r\n0: An unknown error occurred with the request."
+          },
+          "403": {
+            "description": "0: Token Validation Failed"
+          },
+          "503": {
+            "description": "2: Feature disabled."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Passkeys:DeletePasskeys"
+          ]
+        }
+      }
+    },
+    "/v1/passkey/FinishRegistration": {
+      "post": {
+        "tags": [
+          "Passkeys"
+        ],
+        "summary": "Complete Passkey registration by providing credential creation options.",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "The request body.Roblox.Authentication.Api.Models.Request.FinishPasskeyRegistrationRequest.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Request.FinishPasskeyRegistrationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Web.WebAPI.ApiEmptyResponseModel"
+            }
+          },
+          "400": {
+            "description": "0: An unknown error occurred with the request.\r\n3: Invalid security key nickname."
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request.\r\n0: An unknown error occurred with the request."
+          },
+          "403": {
+            "description": "0: Token Validation Failed\r\n3: Invalid security key nickname."
+          },
+          "503": {
+            "description": "2: Feature disabled."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Passkeys:FinishRegistration"
+          ]
+        }
+      }
+    },
+    "/v1/passkey/ListCredentials": {
+      "post": {
+        "tags": [
+          "Passkeys"
+        ],
+        "summary": "List a user's registered  Passkeys.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Response.ListPasskeyCredentialResponse"
+            }
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request.\r\n0: An unknown error occurred with the request."
+          },
+          "403": {
+            "description": "0: Token Validation Failed"
+          },
+          "503": {
+            "description": "2: Feature disabled."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Passkeys:ListPassKey"
+          ]
+        }
+      }
+    },
+    "/v1/passkey/StartAuthentication": {
+      "post": {
+        "tags": [
+          "Passkeys"
+        ],
+        "summary": "Provides a challenge for the Passkey to authenticate.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Response.StartAuthenticationResponse"
+            }
+          },
+          "403": {
+            "description": "0: Token Validation Failed"
+          },
+          "503": {
+            "description": "2: Feature disabled."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Passkeys:StartAuthentication"
+          ]
+        }
+      }
+    },
+    "/v1/passkey/StartRegistration": {
+      "post": {
+        "tags": [
+          "Passkeys"
+        ],
+        "summary": "Initiates  Passkey registration by providing credential creation options.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Response.StartPasskeyRegistrationResponse"
+            }
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request.\r\n0: An unknown error occurred with the request."
+          },
+          "403": {
+            "description": "0: Token Validation Failed\r\n1: Reached limit of pass keys registered."
+          },
+          "503": {
+            "description": "2: Feature disabled."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Passkeys:StartRegistration"
+          ]
+        }
+      }
+    },
     "/v1/signup": {
       "post": {
         "tags": [
@@ -1372,7 +1577,7 @@
             }
           },
           "400": {
-            "description": "Bad request\r\n16: User agreement ids are null."
+            "description": "Bad request\r\n16: User agreement ids are null.\r\n21: Empty account switch blob required"
           },
           "500": {
             "description": "Internal server error\r\n15: Insert acceptances failed."
@@ -1381,7 +1586,7 @@
             "description": "Service unavailable"
           },
           "403": {
-            "description": "0: Token Validation Failed\r\n2: Captcha Failed.\r\n4: Invalid Birthday.\r\n5: Invalid Username.\r\n6: Username already taken.\r\n7: Invalid Password.\r\n8: Password and Username are same.\r\n9: Password is too simple.\r\n10: Email is invalid.\r\n11: Asset is invalid.\r\n12: Too many attempts. Please wait a bit.\r\n17: One time Passcode session was not valid"
+            "description": "0: Token Validation Failed\r\n2: Captcha Failed.\r\n4: Invalid Birthday.\r\n5: Invalid Username.\r\n6: Username already taken.\r\n7: Invalid Password.\r\n8: Password and Username are same.\r\n9: Password is too simple.\r\n10: Email is invalid.\r\n11: Asset is invalid.\r\n12: Too many attempts. Please wait a bit.\r\n17: One time Passcode session was not valid\r\n22: Maximum logged in accounts limit reached."
           },
           "429": {
             "description": "3: Too many attempts. Please wait a bit."
@@ -2189,6 +2394,19 @@
         }
       }
     },
+    "Roblox.Authentication.Api.Models.Request.DeletePasskeysRequest": {
+      "description": "Request information needed to delete passkeys.",
+      "type": "object",
+      "properties": {
+        "passkeysNicknames": {
+          "description": "A array of nicknames of passkeys to be deleted.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "Roblox.Authentication.Api.Models.Request.ExternalLoginAndLinkRequest": {
       "description": "Model for External Login and Link requests",
       "type": "object",
@@ -2322,6 +2540,24 @@
         }
       }
     },
+    "Roblox.Authentication.Api.Models.Request.FinishPasskeyRegistrationRequest": {
+      "description": "Request information needed to complete the registration of a security key.",
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "description": "The session of the registration attempt.",
+          "type": "string"
+        },
+        "credentialNickname": {
+          "description": "The nickname of the new credential.",
+          "type": "string"
+        },
+        "attestationResponse": {
+          "description": "The hardware key's response.",
+          "type": "string"
+        }
+      }
+    },
     "Roblox.Authentication.Api.Models.Request.IdentityVerificationLoginRequest": {
       "description": "Request model for identity verification  login",
       "type": "object",
@@ -2369,6 +2605,56 @@
           "type": "string"
         },
         "serverNonce": {
+          "type": "string"
+        }
+      }
+    },
+    "Roblox.Authentication.Api.Models.Response.ListPasskeyCredentialResponse": {
+      "description": "Response parameters for listing all passkeys under a user.",
+      "type": "object",
+      "properties": {
+        "credentials": {
+          "description": "An array of passkeys for a user.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Roblox.Authentication.Api.Models.Response.PasskeyCredential"
+          }
+        }
+      }
+    },
+    "Roblox.Authentication.Api.Models.Response.PasskeyCredential": {
+      "description": "Passkey information that includes its nickname.",
+      "type": "object",
+      "properties": {
+        "nickname": {
+          "description": "Nickname the user has chosen for this passkey.",
+          "type": "string"
+        }
+      }
+    },
+    "Roblox.Authentication.Api.Models.Response.StartAuthenticationResponse": {
+      "description": "Result for a successful verification.",
+      "type": "object",
+      "properties": {
+        "authenticationOptions": {
+          "description": "The authentication options for the Passkey.",
+          "type": "string"
+        },
+        "sessionId": {
+          "description": "The session of the authentication attempt.",
+          "type": "string"
+        }
+      }
+    },
+    "Roblox.Authentication.Api.Models.Response.StartPasskeyRegistrationResponse": {
+      "type": "object",
+      "properties": {
+        "CreationOptions": {
+          "description": "The credential registration options for the hardware key.",
+          "type": "string"
+        },
+        "SessionId": {
+          "description": "The session of the registration attempt.",
           "type": "string"
         }
       }
