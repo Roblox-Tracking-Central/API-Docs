@@ -102,6 +102,10 @@
           "description": "Gets or sets the punishmentId",
           "type": "integer"
         },
+        "interventionId": {
+          "description": "Gets or sets the interventionId",
+          "type": "string"
+        },
         "beginDate": {
           "description": "Gets or sets the start date of punishment",
           "type": "string"
