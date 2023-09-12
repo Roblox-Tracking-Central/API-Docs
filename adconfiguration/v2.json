@@ -622,13 +622,14 @@
         },
         "targetDeviceType": {
           "format": "int32",
-          "description": "Targeting device type(s) of the ad set ['Undefined' = 1, 'Computer' = 2, 'Phone' = 4, 'Tablet' = 8, 'Console' = 16]",
+          "description": "Targeting device type(s) of the ad set ['Undefined' = 1, 'Computer' = 2, 'Phone' = 4, 'Tablet' = 8, 'Console' = 16, 'VR' = 32]",
           "enum": [
             1,
             2,
             4,
             8,
-            16
+            16,
+            32
           ],
           "type": "integer"
         },
@@ -792,13 +793,14 @@
         },
         "targetDeviceType": {
           "format": "int32",
-          "description": "Targeting device type(s) of the ad set ['Undefined' = 1, 'Computer' = 2, 'Phone' = 4, 'Tablet' = 8, 'Console' = 16]",
+          "description": "Targeting device type(s) of the ad set ['Undefined' = 1, 'Computer' = 2, 'Phone' = 4, 'Tablet' = 8, 'Console' = 16, 'VR' = 32]",
           "enum": [
             1,
             2,
             4,
             8,
-            16
+            16,
+            32
           ],
           "type": "integer",
           "example": 2
@@ -1026,13 +1028,14 @@
         },
         "targetDeviceType": {
           "format": "int32",
-          "description": "The target device type of the ad set ['Undefined' = 1, 'Computer' = 2, 'Phone' = 4, 'Tablet' = 8, 'Console' = 16]",
+          "description": "The target device type of the ad set ['Undefined' = 1, 'Computer' = 2, 'Phone' = 4, 'Tablet' = 8, 'Console' = 16, 'VR' = 32]",
           "enum": [
             1,
             2,
             4,
             8,
-            16
+            16,
+            32
           ],
           "type": "integer"
         },
@@ -1191,13 +1194,14 @@
         },
         "targetDeviceType": {
           "format": "int32",
-          "description": "The target device type of the ad set ['Undefined' = 1, 'Computer' = 2, 'Phone' = 4, 'Tablet' = 8, 'Console' = 16]",
+          "description": "The target device type of the ad set ['Undefined' = 1, 'Computer' = 2, 'Phone' = 4, 'Tablet' = 8, 'Console' = 16, 'VR' = 32]",
           "enum": [
             1,
             2,
             4,
             8,
-            16
+            16,
+            32
           ],
           "type": "integer"
         },
