@@ -58,8 +58,7 @@
               1,
               2,
               3,
-              4,
-              5
+              4
             ]
           },
           {
@@ -1392,14 +1391,13 @@
       "properties": {
         "ctype": {
           "format": "int32",
-          "description": "Credentials type Roblox.Platform.Authentication.CredentialsType. ['Email' = 0, 'Username' = 1, 'PhoneNumber' = 2, 'EmailOtpSessionToken' = 3, 'AuthToken' = 4, 'Passkey' = 5]",
+          "description": "Credentials type Roblox.Platform.Authentication.CredentialsType. ['Email' = 0, 'Username' = 1, 'PhoneNumber' = 2, 'EmailOtpSessionToken' = 3, 'AuthToken' = 4]",
           "enum": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "type": "integer"
         },
@@ -1898,8 +1896,7 @@
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "type": "integer"
         },
