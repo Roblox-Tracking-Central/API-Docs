@@ -1572,6 +1572,10 @@
         "twoStepVerificationToken": {
           "description": "The 2SV verification token (when redeeming a solved 2SV challenge).",
           "type": "string"
+        },
+        "accountBlob": {
+          "description": "Account Switcher blob, which stores the accounts that can be switchd into. An empty or null value implies \r\nthat no accounts are available to switch into.",
+          "type": "string"
         }
       }
     },
@@ -2131,13 +2135,14 @@
       "properties": {
         "mediaType": {
           "format": "int32",
-          "description": "The media type the two step verification code was sent on ['Email' = 0, 'SMS' = 1, 'Authenticator' = 2, 'RecoveryCode' = 3, 'SecurityKey' = 4]",
+          "description": "The media type the two step verification code was sent on ['Email' = 0, 'SMS' = 1, 'Authenticator' = 2, 'RecoveryCode' = 3, 'SecurityKey' = 4, 'CrossDevice' = 5]",
           "enum": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "type": "integer"
         },

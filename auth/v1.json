@@ -2945,13 +2945,14 @@
       "properties": {
         "mediaType": {
           "format": "int32",
-          "description": "The media type the two step verification code was sent on ['Email' = 0, 'SMS' = 1, 'Authenticator' = 2, 'RecoveryCode' = 3, 'SecurityKey' = 4]",
+          "description": "The media type the two step verification code was sent on ['Email' = 0, 'SMS' = 1, 'Authenticator' = 2, 'RecoveryCode' = 3, 'SecurityKey' = 4, 'CrossDevice' = 5]",
           "enum": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "type": "integer"
         },
