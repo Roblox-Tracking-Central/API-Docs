@@ -97,6 +97,11 @@
           "description": "Gets or sets the punishment type description",
           "type": "string"
         },
+        "punishmentId": {
+          "format": "int64",
+          "description": "Gets or sets the punishmentId",
+          "type": "integer"
+        },
         "interventionId": {
           "description": "Gets or sets the interventionId",
           "type": "string"
