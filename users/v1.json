@@ -610,6 +610,11 @@
           },
           {
             "in": "query",
+            "name": "sessionId",
+            "type": "string"
+          },
+          {
+            "in": "query",
             "name": "limit",
             "description": "The number of results per request.",
             "type": "integer",
