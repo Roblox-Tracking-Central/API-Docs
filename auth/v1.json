@@ -2400,7 +2400,7 @@
       "description": "Request information needed to delete passkeys.",
       "type": "object",
       "properties": {
-        "passkeysNicknames": {
+        "credentialNicknames": {
           "description": "A array of nicknames of passkeys to be deleted.",
           "type": "array",
           "items": {
@@ -2652,11 +2652,11 @@
     "Roblox.Authentication.Api.Models.Response.StartPasskeyRegistrationResponse": {
       "type": "object",
       "properties": {
-        "CreationOptions": {
+        "creationOptions": {
           "description": "The credential registration options for the hardware key.",
           "type": "string"
         },
-        "SessionId": {
+        "sessionId": {
           "description": "The session of the registration attempt.",
           "type": "string"
         }
