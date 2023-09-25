@@ -462,7 +462,8 @@
             "enum": [
               0,
               1,
-              2
+              2,
+              3
             ]
           }
         ],
@@ -519,6 +520,75 @@
           "internal": false,
           "metricIds": [
             "Friends:GetUsersFriendsCount"
+          ]
+        }
+      }
+    },
+    "/v1/users/{userId}/friends/find": {
+      "get": {
+        "tags": [
+          "Friends"
+        ],
+        "summary": "Get a paginated list of all friends for the specified user.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "The user Id to get the friends for.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "userSort",
+            "description": "Specifies how to sort the returned friends.",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "description": "The paging cursor for the previous or next page.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "The number of results per request.",
+            "type": "integer",
+            "format": "int32",
+            "default": 50
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Paging.CursoredPagedResult[Roblox.Friends.Api.Models.Response.FriendResponse]"
+            }
+          },
+          "400": {
+            "description": "1: The target user is invalid or does not exist.\r\n6: Invalid parameters."
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Friends:FindFriends"
           ]
         }
       }
@@ -603,6 +673,81 @@
           "internal": false,
           "metricIds": [
             "Friends:GetAllOnlineFriends"
+          ]
+        }
+      }
+    },
+    "/v1/users/{userId}/friends/search": {
+      "get": {
+        "tags": [
+          "Friends"
+        ],
+        "summary": "Search for friends by name using a text query.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "The user Id to get the friends for.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "description": "The string to search names of friends for.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "userSort",
+            "description": "Specifies how to sort the returned friends.",
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "description": "The paging cursor for the previous or next page.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "The number of results per request.",
+            "type": "integer",
+            "format": "int32",
+            "default": 20
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Paging.CursoredPagedResult[Roblox.Friends.Api.Models.Response.FriendResponse]"
+            }
+          },
+          "400": {
+            "description": "1: The target user is invalid or does not exist.\r\n6: Invalid parameters."
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Friends:SearchFriends"
           ]
         }
       }
@@ -1421,6 +1566,21 @@
         }
       }
     },
+    "Roblox.Friends.Api.Models.Response.FriendResponse": {
+      "description": "A response model representing friend information",
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int64",
+          "description": "The friend's userId",
+          "type": "integer"
+        },
+        "hasVerifiedBadge": {
+          "description": "The friend's verified badge status.",
+          "type": "boolean"
+        }
+      }
+    },
     "Roblox.Friends.Api.Models.Response.FriendsPageMetadataResponse": {
       "type": "object",
       "properties": {
@@ -1640,6 +1800,23 @@
         "updated": {
           "description": "Boolean for if the computed value was stored as the count",
           "type": "boolean"
+        }
+      }
+    },
+    "Roblox.Paging.CursoredPagedResult[Roblox.Friends.Api.Models.Response.FriendResponse]": {
+      "type": "object",
+      "properties": {
+        "PreviousCursor": {
+          "type": "string"
+        },
+        "PageItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Roblox.Friends.Api.Models.Response.FriendResponse"
+          }
+        },
+        "NextCursor": {
+          "type": "string"
         }
       }
     },
