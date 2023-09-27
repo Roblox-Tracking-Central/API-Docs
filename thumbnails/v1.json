@@ -848,6 +848,32 @@
         }
       }
     },
+    "/v1/metadata": {
+      "get": {
+        "tags": [
+          "MetaData"
+        ],
+        "summary": "Return list of thumbnail meta data.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Thumbnails.Api.Models.ThumbnailMetaDataResponse"
+            }
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "MetaData:GetThumbnailMetaData"
+          ]
+        }
+      }
+    },
     "/v1/places/gameicons": {
       "get": {
         "tags": [
@@ -1399,6 +1425,21 @@
     }
   },
   "definitions": {
+    "Roblox.Thumbnails.Api.Models.ThumbnailMetaDataResponse": {
+      "description": "A response model for thumbnails which belong to a specific universe ID",
+      "type": "object",
+      "properties": {
+        "isWebappUseCacheEnabled": {
+          "description": "webapp use cache",
+          "type": "boolean"
+        },
+        "webappCacheExpirationTimspan": {
+          "format": "date-span",
+          "description": "webapp caching expiration in ms",
+          "type": "string"
+        }
+      }
+    },
     "Roblox.Thumbnails.Api.Models.UniverseThumbnailsResponse": {
       "description": "A response model for thumbnails which belong to a specific universe ID",
       "type": "object",
@@ -1535,9 +1576,6 @@
         },
         "imageUrl": {
           "type": "string"
-        },
-        "version": {
-          "type": "string"
         }
       }
     },
@@ -1561,9 +1599,6 @@
           "type": "string"
         },
         "imageUrl": {
-          "type": "string"
-        },
-        "version": {
           "type": "string"
         }
       }
