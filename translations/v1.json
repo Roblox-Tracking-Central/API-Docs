@@ -201,8 +201,10 @@
             "description": "3: Translations do not exist"
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": "Please use the /v1/translate endpoint",
           "metricIds": [
             "Translations:GetTranslatedContentInContentNamespace"
           ]
