@@ -30,8 +30,10 @@
             "description": "0: Authorization has been denied for this request."
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": "Use the Autolocalization controller in LocalizationTables API",
           "metricIds": [
             "Autolocalization:GetMetadata"
           ]
@@ -1545,8 +1547,10 @@
             "description": "0: Token Validation Failed"
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": "Use the Autolocalization controller in LocalizationTables API",
           "metricIds": [
             "Autolocalization:SetAutolocalizationTableForGame"
           ]
@@ -1583,8 +1587,10 @@
             "description": "0: Token Validation Failed"
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": "Use the Autolocalization controller in LocalizationTables API",
           "metricIds": [
             "Autolocalization:GetOrCreateAutolocalizationTableForGame"
           ]
@@ -2477,8 +2483,10 @@
             "description": "17: Feature is disabled"
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": "Use the Autolocalization controller in LocalizationTables API",
           "metricIds": [
             "Autolocalization:SetAutolocalizationSettingsForGame"
           ]
