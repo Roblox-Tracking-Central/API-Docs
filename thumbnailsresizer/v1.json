@@ -57,6 +57,7 @@
             "in": "query",
             "name": "filterType",
             "description": "E.g. is output circular",
+            "required": true,
             "type": "string"
           }
         ],

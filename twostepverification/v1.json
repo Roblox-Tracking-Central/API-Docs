@@ -241,6 +241,122 @@
         }
       }
     },
+    "/v1/users/{userId}/challenges/cross-device/retry": {
+      "post": {
+        "tags": [
+          "CrossDevice"
+        ],
+        "summary": "Retry a Cross Device two step verification approval.",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "The user ID.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "The Roblox.TwoStepVerification.Api.RetryApprovalRequest.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.TwoStepVerification.Api.RetryApprovalRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.TwoStepVerification.Api.RetryApprovalResponse"
+            }
+          },
+          "400": {
+            "description": "1: Invalid challenge ID.\r\n2: The user ID is invalid."
+          },
+          "403": {
+            "description": "0: Token Validation Failed\r\n19: Challenge denied."
+          },
+          "503": {
+            "description": "7: Two step verification is currently under maintenance."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "CrossDevice:RetryApproval"
+          ]
+        }
+      }
+    },
+    "/v1/users/{userId}/challenges/cross-device/verify": {
+      "post": {
+        "tags": [
+          "CrossDevice"
+        ],
+        "summary": "Verifies a two step verification approval via Cross Device. Cross Device approval does not use a verification code.",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "The user ID.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "The Roblox.TwoStepVerification.Api.VerifyApprovalRequest.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.TwoStepVerification.Api.VerifyApprovalRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.TwoStepVerification.Api.VerifyApprovalResponse"
+            }
+          },
+          "400": {
+            "description": "0: An unknown error occurred with the request.\r\n1: Invalid challenge ID.\r\n2: The user ID is invalid."
+          },
+          "403": {
+            "description": "0: Token Validation Failed\r\n9: The two step verification configuration is invalid for this action.\r\n19: Challenge denied."
+          },
+          "503": {
+            "description": "7: Two step verification is currently under maintenance."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "CrossDevice:VerifyApproval"
+          ]
+        }
+      }
+    },
     "/v1/users/{userId}/challenges/email/send-code": {
       "post": {
         "tags": [
@@ -1744,6 +1860,36 @@
         }
       }
     },
+    "Roblox.TwoStepVerification.Api.RetryApprovalRequest": {
+      "description": "Request parameters for retrying a Cross Device two step verification approval.",
+      "type": "object",
+      "properties": {
+        "challengeId": {
+          "description": "The two step verification challenge ID.",
+          "type": "string"
+        },
+        "actionType": {
+          "format": "int32",
+          "description": "The Roblox.TwoStepVerification.Client.TwoStepVerificationActionType associated with the challenge. ['Unknown' = 0, 'Login' = 1, 'RobuxSpend' = 2, 'ItemTrade' = 3, 'Resale' = 4, 'PasswordReset' = 5, 'RevertAccount' = 6, 'Generic' = 7, 'GenericWithRecoveryCodes' = 8]",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "type": "integer"
+        }
+      }
+    },
+    "Roblox.TwoStepVerification.Api.RetryApprovalResponse": {
+      "description": "Result for a successful Cross Device approval retry, an empty JSON.",
+      "type": "object"
+    },
     "Roblox.TwoStepVerification.Api.SecurityKeyCredential": {
       "description": "Credential information that includes its nickname and any additional metadata.",
       "type": "object",
@@ -1792,7 +1938,8 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "type": "integer"
         },
@@ -1811,13 +1958,14 @@
       "properties": {
         "mediaType": {
           "format": "int32",
-          "description": "The Roblox.TwoStepVerification.Client.TwoStepVerificationMediaType for the method. ['Email' = 0, 'SMS' = 1, 'Authenticator' = 2, 'RecoveryCode' = 3, 'SecurityKey' = 4]",
+          "description": "The Roblox.TwoStepVerification.Client.TwoStepVerificationMediaType for the method. ['Email' = 0, 'SMS' = 1, 'Authenticator' = 2, 'RecoveryCode' = 3, 'SecurityKey' = 4, 'CrossDevice' = 5]",
           "enum": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "type": "integer"
         },
@@ -1828,6 +1976,42 @@
         "updated": {
           "format": "date-time",
           "description": "The last time this method was updated for the user.",
+          "type": "string"
+        }
+      }
+    },
+    "Roblox.TwoStepVerification.Api.VerifyApprovalRequest": {
+      "description": "Request parameters for verifying a Cross Device two step verification approval. Does not use verification code.",
+      "type": "object",
+      "properties": {
+        "challengeId": {
+          "description": "The two step verification challenge ID.",
+          "type": "string"
+        },
+        "actionType": {
+          "format": "int32",
+          "description": "The Roblox.TwoStepVerification.Client.TwoStepVerificationActionType associated with the challenge. ['Unknown' = 0, 'Login' = 1, 'RobuxSpend' = 2, 'ItemTrade' = 3, 'Resale' = 4, 'PasswordReset' = 5, 'RevertAccount' = 6, 'Generic' = 7, 'GenericWithRecoveryCodes' = 8]",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "type": "integer"
+        }
+      }
+    },
+    "Roblox.TwoStepVerification.Api.VerifyApprovalResponse": {
+      "description": "Result for a successful Cross Device approval verification.",
+      "type": "object",
+      "properties": {
+        "verificationToken": {
+          "description": "The verification token.",
           "type": "string"
         }
       }
