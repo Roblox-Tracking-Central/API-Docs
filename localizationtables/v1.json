@@ -878,7 +878,7 @@
             }
           },
           "400": {
-            "description": "14: Invalid game id"
+            "description": "14: Invalid game id\r\n61: IsAutomaticEntriesSettingEnabled can only be enabled if IsAutolocalizationEnabled is also enabled."
           },
           "401": {
             "description": "0: Authorization has been denied for this request."
