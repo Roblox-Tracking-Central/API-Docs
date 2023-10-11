@@ -350,35 +350,6 @@
         }
       }
     },
-    "/v2/stream-notifications/get-prompt-settings": {
-      "get": {
-        "tags": [
-          "NotificationStream"
-        ],
-        "summary": "Gets the Notification stream prompt settings",
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Api.Notifications.Models.NotificationStreamPromptSettingsModel"
-            }
-          },
-          "401": {
-            "description": "0: Authorization has been denied for this request."
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "NotificationStream:GetPromptSettings"
-          ]
-        }
-      }
-    },
     "/v2/stream-notifications/get-recent": {
       "get": {
         "tags": [
@@ -1506,38 +1477,6 @@
           ]
         }
       }
-    },
-    "/v2/stream-notifications/suppress-prompt": {
-      "post": {
-        "tags": [
-          "NotificationStream"
-        ],
-        "summary": "Supresses the notification stream prompt",
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Api.Notifications.Models.SuccessResponseModel"
-            }
-          },
-          "401": {
-            "description": "0: Authorization has been denied for this request."
-          },
-          "403": {
-            "description": "0: Token Validation Failed"
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "NotificationStream:SuppressPrompt"
-          ]
-        }
-      }
     }
   },
   "definitions": {
@@ -1932,19 +1871,6 @@
         },
         "content": {
           "description": "Content object for sendr notification stream entry"
-        }
-      }
-    },
-    "Roblox.Api.Notifications.Models.NotificationStreamPromptSettingsModel": {
-      "type": "object",
-      "properties": {
-        "hasUserInteractedWithNotificationStream": {
-          "description": "Has user interacted with the notification stream",
-          "type": "boolean"
-        },
-        "showNotificationStreamPrompt": {
-          "description": "Should the notification stream prompt be visible for the user",
-          "type": "boolean"
         }
       }
     },
