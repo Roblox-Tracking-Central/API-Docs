@@ -9,6 +9,45 @@
     "https"
   ],
   "paths": {
+    "/v1/asset-thumbnail-animated": {
+      "get": {
+        "tags": [
+          "Assets"
+        ],
+        "summary": "Thumbnails asset animated.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "assetId",
+            "description": "The asset id.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Web.Responses.Thumbnails.ThumbnailResponse"
+            }
+          },
+          "400": {
+            "description": "4: The requested Ids are invalid, of an invalid type or missing."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Assets:GetAssetThumbnailAnimated"
+          ]
+        }
+      }
+    },
     "/v1/assets": {
       "get": {
         "tags": [
@@ -157,45 +196,6 @@
           "internal": false,
           "metricIds": [
             "Assets:GetAssetThumbnail3D"
-          ]
-        }
-      }
-    },
-    "/v1/asset-thumbnail-animated": {
-      "get": {
-        "tags": [
-          "Assets"
-        ],
-        "summary": "Thumbnails asset animated.",
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "assetId",
-            "description": "The asset id.",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Web.Responses.Thumbnails.ThumbnailResponse"
-            }
-          },
-          "400": {
-            "description": "4: The requested Ids are invalid, of an invalid type or missing."
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "Assets:GetAssetThumbnailAnimated"
           ]
         }
       }

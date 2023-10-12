@@ -2203,6 +2203,10 @@
         "IsPasswordRequiredForUsernameChange": {
           "description": "Whether password entry is required for username changes.",
           "type": "boolean"
+        },
+        "IsPasskeyFeatureEnabled": {
+          "description": "Whether passkey feature is enabled.",
+          "type": "boolean"
         }
       }
     },
