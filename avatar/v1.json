@@ -38,6 +38,32 @@
         }
       }
     },
+    "/v1/avatar/metadata": {
+      "get": {
+        "tags": [
+          "Avatar"
+        ],
+        "summary": "Returns metadata used by the avatar page of the website",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Api.Avatar.Models.AvatarMetadataModel"
+            }
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Avatar:GetAvatarMetaData"
+          ]
+        }
+      }
+    },
     "/v1/avatar-rules": {
       "get": {
         "tags": [
@@ -61,32 +87,6 @@
           "internal": false,
           "metricIds": [
             "Avatar:GetAvatarRulesModel"
-          ]
-        }
-      }
-    },
-    "/v1/avatar/metadata": {
-      "get": {
-        "tags": [
-          "Avatar"
-        ],
-        "summary": "Returns metadata used by the avatar page of the website",
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Api.Avatar.Models.AvatarMetadataModel"
-            }
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "Avatar:GetAvatarMetaData"
           ]
         }
       }
