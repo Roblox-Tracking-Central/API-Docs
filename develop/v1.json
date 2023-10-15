@@ -2888,6 +2888,13 @@
       "description": "Universes search model. Implements Roblox.Api.Develop.Search.ISearchAndSortBaseModel",
       "type": "object",
       "properties": {
+        "Sorts": {
+          "description": "Sort value and Roblox.DataV2.Core.SortOrder pairs.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/System.Tuple[System.String,Roblox.DataV2.Core.SortOrder]"
+          }
+        },
         "RawQuery": {
           "type": "string"
         },
@@ -2917,13 +2924,6 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
-        },
-        "Sorts": {
-          "description": "Sort value and Roblox.DataV2.Core.SortOrder pairs.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/System.Tuple[System.String,Roblox.DataV2.Core.SortOrder]"
           }
         }
       }
