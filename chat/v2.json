@@ -685,53 +685,6 @@
         }
       }
     },
-    "/v2/reset-conversation-universe": {
-      "post": {
-        "tags": [
-          "Chat"
-        ],
-        "summary": "Removes universe associated with a conversation",
-        "consumes": [
-          "application/json",
-          "text/json"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "requestModel",
-            "description": "",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Roblox.Chat.Api.Models.ResetConversationUniverseRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Chat.Api.Models.UserVisibleStatusResponse"
-            }
-          },
-          "401": {
-            "description": "0: Authorization has been denied for this request."
-          },
-          "403": {
-            "description": "0: Token Validation Failed"
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "Chat:ResetConversationUniverse"
-          ]
-        }
-      }
-    },
     "/v2/send-game-link-message": {
       "post": {
         "tags": [
@@ -820,53 +773,6 @@
           "internal": false,
           "metricIds": [
             "Chat:SendPlainTextChatMessage"
-          ]
-        }
-      }
-    },
-    "/v2/set-conversation-universe": {
-      "post": {
-        "tags": [
-          "Chat"
-        ],
-        "summary": "Adds or updates universe associated with a conversation",
-        "consumes": [
-          "application/json",
-          "text/json"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "requestModel",
-            "description": "",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Roblox.Chat.Api.Models.SetConversationUniverseRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Chat.Api.Models.UserVisibleStatusResponse"
-            }
-          },
-          "401": {
-            "description": "0: Authorization has been denied for this request."
-          },
-          "403": {
-            "description": "0: Token Validation Failed"
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "Chat:SetConversationUniverse"
           ]
         }
       }
@@ -1633,16 +1539,6 @@
         }
       }
     },
-    "Roblox.Chat.Api.Models.ResetConversationUniverseRequest": {
-      "type": "object",
-      "properties": {
-        "conversationId": {
-          "format": "int64",
-          "description": "Conversation id to remove universe from",
-          "type": "integer"
-        }
-      }
-    },
     "Roblox.Chat.Api.Models.RolloutSettingModel": {
       "type": "object",
       "properties": {
@@ -1842,21 +1738,6 @@
         "universeId": {
           "format": "int64",
           "description": "The universeId for SetConversationUniverse EventBased ChatMessage",
-          "type": "integer"
-        }
-      }
-    },
-    "Roblox.Chat.Api.Models.SetConversationUniverseRequest": {
-      "type": "object",
-      "properties": {
-        "conversationId": {
-          "format": "int64",
-          "description": "Conversation id to add universe to",
-          "type": "integer"
-        },
-        "universeId": {
-          "format": "int64",
-          "description": "ConversationUniverse id to be added to the conversation",
           "type": "integer"
         }
       }

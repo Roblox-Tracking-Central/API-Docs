@@ -145,6 +145,13 @@
             "description": "Part of pagination. Maximum number of items that might be returned in the page.",
             "type": "integer",
             "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "groupId",
+            "description": "Optional seleted groupId of resources requested for the user and role.",
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "responses": {

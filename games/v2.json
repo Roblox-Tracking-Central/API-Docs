@@ -294,8 +294,10 @@
             }
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": "This endpoint will be deprecated on 1/31/2024. As part of soft deprecation we will return empty lists for all users no matter what from now until 1/31/2024. Please use GET www.roblox.com/users/favorites/list-json?assetTypeId=9&userId={userId}&itemsPerPage={number}&pageNumber={pageNumber} as replacement.",
           "metricIds": [
             "GamesV2:GetUserFavoriteGames"
           ]

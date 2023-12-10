@@ -78,6 +78,80 @@
         }
       }
     },
+    "/v2/avatar/users/{userId}/outfits": {
+      "get": {
+        "tags": [
+          "AvatarV2"
+        ],
+        "summary": "Gets a list of outfits for the specified user.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "The user id.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "paginationToken",
+            "description": "The token received from the response to get the next page. For the first request, this value should be empty. Note : If no value is sent the 1st page will be returned.",
+            "type": "string",
+            "default": ""
+          },
+          {
+            "in": "query",
+            "name": "outfitType",
+            "description": "The outfit type being searched for, null will return all outfitTypes",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "The page number of the current page of requests, default is 1.",
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+          },
+          {
+            "in": "query",
+            "name": "itemsPerPage",
+            "description": "The max number of outfits that can be returned.",
+            "type": "integer",
+            "format": "int32",
+            "default": 25
+          },
+          {
+            "in": "query",
+            "name": "isEditable",
+            "description": "Whether the outfits are editable. A null value will lead to no filtering.",
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Api.Avatar.Models.AvatarPageResponse[Roblox.Api.Avatar.Models.OutfitModel]"
+            }
+          },
+          "400": {
+            "description": "1: The specified user does not exist.\r\n2: An account for the given userId does not exist!"
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "AvatarV2:GetUserOutfitListModel"
+          ]
+        }
+      }
+    },
     "/v2/avatar/set-body-colors": {
       "post": {
         "tags": [
@@ -336,7 +410,7 @@
             }
           },
           "400": {
-            "description": "1: The specified userOutfit does not exist!\r\n1: Must provide both assetIds and bodyColors in to update outfit contents.\r\n3: Body colors must be valid BrickColor IDs\r\n4: Invalid outfit name\r\n5: Asset is not wearable by you\r\n8: Invalid Player Avatar Type. Valid types are R6 and R15\r\n9: Invalid user outfit."
+            "description": "1: The specified userOutfit does not exist!\r\n1: Must provide both assetIds and bodyColors in to update outfit contents.\r\n3: Body colors must be valid BrickColor IDs\r\n4: Invalid outfit name\r\n5: Asset is not wearable by you\r\n8: Invalid Player Avatar Type. Valid types are R6 and R15\r\n11: Meta does not apply to specified asset type"
           },
           "401": {
             "description": "0: Authorization has been denied for this request."
@@ -484,6 +558,23 @@
           "items": {
             "$ref": "#/definitions/Roblox.Api.Avatar.Models.EmoteResponseModel"
           }
+        }
+      }
+    },
+    "Roblox.Api.Avatar.Models.AvatarPageResponse[Roblox.Api.Avatar.Models.OutfitModel]": {
+      "description": "Avatar page response.",
+      "type": "object",
+      "properties": {
+        "data": {
+          "description": "The data",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Roblox.Api.Avatar.Models.OutfitModel"
+          }
+        },
+        "paginationToken": {
+          "description": "A non empty string indicates that there is more data available than this response contains. An empty string indicates the last page.",
+          "type": "string"
         }
       }
     },

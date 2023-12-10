@@ -609,92 +609,6 @@
         }
       }
     },
-    "/v1/search/universes": {
-      "get": {
-        "tags": [
-          "Search"
-        ],
-        "summary": "Allows searching for universes.",
-        "description": "PoC of search endpoint which supports filters in search query string and special syntax for sorts.\r\nIMPORTANT: filter names, values, sort values - are case sensitive!",
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "search",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "limit",
-            "description": "The number of results per request.",
-            "type": "integer",
-            "format": "int32",
-            "default": 10,
-            "enum": [
-              10,
-              25,
-              50,
-              100
-            ]
-          },
-          {
-            "in": "query",
-            "name": "cursor",
-            "description": "The paging cursor for the previous or next page.",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "sortOrder",
-            "description": "The order the results are sorted in.",
-            "type": "string",
-            "default": "Asc",
-            "enum": [
-              "Asc",
-              "Desc"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "q",
-            "description": "A search query with filters seperated by whitespace. Example: \"these are keywords! filterName:filterValue filterName:filterValue\"\n\narchived:[Value] (required: False)\nAllowed values: [True,False]\n\nactive:[Value] (required: False)\nAllowed values: [True,False]\n\ncreator:[Value] (required: True)\nAllowed values: [User,Group,Team]\n\ngroups:[Value,Value,...] (required: False)\n\n",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "sort",
-            "description": "Determines the way results will be sorted. Format: (a prefix for ascending or descending) + (sort type).\n\nAscending Prefix: +\n\nDescending Prefix -\n\nAllowed Sort Types: +GameCreated,-GameCreated,+GameName,-GameName,+RootPlaceName,-RootPlaceName,+RootPlaceUpdated,-RootPlaceUpdated,+LastUpdated,-LastUpdated\n\nNote: An allowed type with no prefix allows both ascending and descending but if a prefix is specified only the specified order is allowed.",
-            "type": "array"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Web.WebAPI.Models.ApiPageResponse[Roblox.Api.Develop.Models.UniverseModel]"
-            }
-          },
-          "400": {
-            "description": "'q' field value contains filter which value has a wrong format or is not in allowed values list.\r\nor\r\n'q' field value doesn't contain filter which is required.\r\nor\r\n'sort' field value has a wrong format or is not in allowed values list."
-          },
-          "500": {
-            "description": "Unknown error retrieving search results."
-          },
-          "401": {
-            "description": "0: Authorization has been denied for this request."
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "Search:SearchUniverses"
-          ]
-        }
-      }
-    },
     "/v1/stats/creator-dashboard-metadata": {
       "get": {
         "tags": [
@@ -2884,50 +2798,6 @@
         }
       }
     },
-    "Roblox.Api.Develop.Models.UniversesSearchRequest": {
-      "description": "Universes search model. Implements Roblox.Api.Develop.Search.ISearchAndSortBaseModel",
-      "type": "object",
-      "properties": {
-        "Sorts": {
-          "description": "Sort value and Roblox.DataV2.Core.SortOrder pairs.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/System.Tuple[System.String,Roblox.DataV2.Core.SortOrder]"
-          }
-        },
-        "RawQuery": {
-          "type": "string"
-        },
-        "Keywords": {
-          "type": "string"
-        },
-        "IsArchived": {
-          "description": "Gets or sets the is archived.",
-          "type": "boolean"
-        },
-        "IsActive": {
-          "description": "Gets or sets the is active.",
-          "type": "boolean"
-        },
-        "UniverseSearchPreset": {
-          "format": "int32",
-          "description": "Gets or sets the universe search preset. ['User' = 0, 'Group' = 1, 'Team' = 2]",
-          "enum": [
-            0,
-            1,
-            2
-          ],
-          "type": "integer"
-        },
-        "GroupIds": {
-          "description": "Gets or sets group ids to filter by. Only applies when the Groups filter is being used.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "Roblox.Api.Develop.Models.UpdateTeamCreateSettingsRequest": {
       "description": "Team create settings request",
       "type": "object",
@@ -3001,36 +2871,6 @@
       }
     },
     "Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[Roblox.Platform.TeamCreate.ITeamCreateMembership]": {
-      "type": "object",
-      "properties": {
-        "SortOrder": {
-          "format": "int32",
-          "description": " ['Asc' = 1, 'Desc' = 2]",
-          "enum": [
-            1,
-            2
-          ],
-          "type": "integer",
-          "readOnly": true
-        },
-        "PagingDirection": {
-          "format": "int32",
-          "description": " ['Forward' = 1, 'Backward' = 2]",
-          "enum": [
-            1,
-            2
-          ],
-          "type": "integer",
-          "readOnly": true
-        },
-        "Count": {
-          "format": "int32",
-          "type": "integer",
-          "readOnly": true
-        }
-      }
-    },
-    "Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[System.Int32]": {
       "type": "object",
       "properties": {
         "SortOrder": {
@@ -3151,17 +2991,6 @@
       "properties": {
         "ExclusiveStartKeyInfo": {
           "$ref": "#/definitions/Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[Roblox.Platform.TeamCreate.ITeamCreateMembership]"
-        },
-        "CursorRecipe": {
-          "type": "string"
-        }
-      }
-    },
-    "Roblox.Web.WebAPI.ExclusiveStartRequest[System.Int32]": {
-      "type": "object",
-      "properties": {
-        "ExclusiveStartKeyInfo": {
-          "$ref": "#/definitions/Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[System.Int32]"
         },
         "CursorRecipe": {
           "type": "string"
@@ -3315,23 +3144,6 @@
           "items": {
             "$ref": "#/definitions/Roblox.Api.Develop.Models.UserResponse"
           }
-        }
-      }
-    },
-    "System.Tuple[System.String,Roblox.DataV2.Core.SortOrder]": {
-      "type": "object",
-      "properties": {
-        "m_Item1": {
-          "type": "string"
-        },
-        "m_Item2": {
-          "format": "int32",
-          "description": " ['Asc' = 1, 'Desc' = 2]",
-          "enum": [
-            1,
-            2
-          ],
-          "type": "integer"
         }
       }
     }

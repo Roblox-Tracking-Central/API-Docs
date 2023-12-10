@@ -1448,10 +1448,24 @@
         "tags": [
           "Passkeys"
         ],
-        "summary": "List a user's registered  Passkeys.",
+        "summary": "List a user's registered passkeys.",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
         "produces": [
           "application/json",
           "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Request.ListPasskeysRequest"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -2576,6 +2590,16 @@
         "resultToken": {
           "description": "The IdentityVerificationResultToken",
           "type": "string"
+        }
+      }
+    },
+    "Roblox.Authentication.Api.Models.Request.ListPasskeysRequest": {
+      "description": "Request for listing FIDO2 credentials.",
+      "type": "object",
+      "properties": {
+        "all": {
+          "description": "Whether to include credentials that aren't for login, to resolve naming conflicts.",
+          "type": "boolean"
         }
       }
     },

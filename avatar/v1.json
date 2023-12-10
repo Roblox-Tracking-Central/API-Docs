@@ -38,6 +38,32 @@
         }
       }
     },
+    "/v1/avatar/metadata": {
+      "get": {
+        "tags": [
+          "Avatar"
+        ],
+        "summary": "Returns metadata used by the avatar page of the website",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Api.Avatar.Models.AvatarMetadataModel"
+            }
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Avatar:GetAvatarMetaData"
+          ]
+        }
+      }
+    },
     "/v1/avatar-rules": {
       "get": {
         "tags": [
@@ -61,32 +87,6 @@
           "internal": false,
           "metricIds": [
             "Avatar:GetAvatarRulesModel"
-          ]
-        }
-      }
-    },
-    "/v1/avatar/metadata": {
-      "get": {
-        "tags": [
-          "Avatar"
-        ],
-        "summary": "Returns metadata used by the avatar page of the website",
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Api.Avatar.Models.AvatarMetadataModel"
-            }
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "Avatar:GetAvatarMetaData"
           ]
         }
       }
@@ -132,7 +132,6 @@
         "tags": [
           "Outfits"
         ],
-        "summary": "Gets details about the contents of an outfit.",
         "produces": [
           "application/json",
           "text/json"
@@ -141,7 +140,6 @@
           {
             "in": "path",
             "name": "userOutfitId",
-            "description": "The user outfit id.",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -300,7 +298,7 @@
         "tags": [
           "Avatar"
         ],
-        "summary": "Gets a list of outfits for the specified user.",
+        "summary": "Deprecated, user v2.\r\nGets a list of outfits for the specified user.",
         "produces": [
           "application/json",
           "text/json"
@@ -309,7 +307,7 @@
           {
             "in": "path",
             "name": "userId",
-            "description": "The user id",
+            "description": "The user id.",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -317,13 +315,13 @@
           {
             "in": "query",
             "name": "outfitType",
-            "description": "The outfit type being searched for",
+            "description": "The outfit type being searched for, null will return all outfitTypes",
             "type": "string"
           },
           {
             "in": "query",
             "name": "page",
-            "description": "The page number",
+            "description": "The page number of the current page of requests, default is 1.",
             "type": "integer",
             "format": "int32",
             "default": 1
@@ -331,7 +329,7 @@
           {
             "in": "query",
             "name": "itemsPerPage",
-            "description": "The max number of outfits that can be returned",
+            "description": "The max number of outfits that can be returned.",
             "type": "integer",
             "format": "int32",
             "default": 25
@@ -340,8 +338,7 @@
             "in": "query",
             "name": "isEditable",
             "description": "Whether the outfits are editable. A null value will lead to no filtering.",
-            "type": "boolean",
-            "default": true
+            "type": "boolean"
           }
         ],
         "responses": {

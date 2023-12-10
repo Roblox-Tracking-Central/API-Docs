@@ -9,12 +9,95 @@
     "https"
   ],
   "paths": {
+    "/v1/account/settings/account-country": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Get a user's current account country setting.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.AccountSettings.Api.Models.Response.AccountCountrySettingsResponse"
+            }
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Accounts:GetAccountCountrySetting"
+          ]
+        }
+      },
+      "post": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Updates the user's account country.",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "requestBody",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.AccountSettings.Api.UpdateAccountCountryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.AccountSettings.Api.Models.Response.UpdateAccountCountryResponse"
+            }
+          },
+          "400": {
+            "description": "1: InvalidRequest"
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request."
+          },
+          "403": {
+            "description": "0: Token Validation Failed\r\n2: OperationNotPermitted"
+          },
+          "404": {
+            "description": "2: OperationNotPermitted"
+          },
+          "500": {
+            "description": "0: Unknown"
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Accounts:SetNewCountryForUser"
+          ]
+        }
+      }
+    },
     "/v1/account/settings/metadata": {
       "get": {
         "tags": [
           "Accounts"
         ],
-        "summary": "Returns metadata used by the accountsettings page",
+        "summary": "Returns metadata used by the account settings page",
         "produces": [
           "application/json",
           "text/json"
@@ -1208,6 +1291,26 @@
         }
       }
     },
+    "Roblox.AccountSettings.Api.Models.Response.AccountCountrySettingsResponse": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Roblox.AccountSettings.Api.Models.Response.UserAccountCountry"
+        },
+        "options": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Roblox.AccountSettings.Api.Models.Response.UserAccountCountry"
+          }
+        },
+        "modifiable": {
+          "description": "",
+          "type": "boolean"
+        }
+      }
+    },
     "Roblox.AccountSettings.Api.Models.Response.GetBlockedUsersResponse": {
       "type": "object",
       "properties": {
@@ -1240,6 +1343,28 @@
         "total": {
           "format": "int64",
           "description": "The total number of users this user has blocked.",
+          "type": "integer"
+        }
+      }
+    },
+    "Roblox.AccountSettings.Api.Models.Response.UpdateAccountCountryResponse": {
+      "type": "object"
+    },
+    "Roblox.AccountSettings.Api.Models.Response.UserAccountCountry": {
+      "description": "",
+      "type": "object",
+      "properties": {
+        "countryName": {
+          "description": "",
+          "type": "string"
+        },
+        "localizedName": {
+          "description": "",
+          "type": "string"
+        },
+        "countryId": {
+          "format": "int32",
+          "description": "",
           "type": "integer"
         }
       }
@@ -1376,6 +1501,17 @@
         "tradeValue": {
           "description": "The current trade value setting for the current user",
           "type": "string"
+        }
+      }
+    },
+    "Roblox.AccountSettings.Api.UpdateAccountCountryRequest": {
+      "description": "Request Model for updating a user's account country",
+      "type": "object",
+      "properties": {
+        "targetCountryId": {
+          "format": "int32",
+          "description": "The targetCountryId",
+          "type": "integer"
         }
       }
     },

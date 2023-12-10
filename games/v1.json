@@ -389,33 +389,28 @@
           {
             "in": "query",
             "name": "limit",
-            "description": "The number of results per request.",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "sortOrder",
+            "description": "",
             "type": "integer",
             "format": "int32",
-            "default": 10,
+            "default": 1,
             "enum": [
-              10,
-              25,
-              50,
-              100
+              1,
+              2
             ]
           },
           {
             "in": "query",
             "name": "cursor",
-            "description": "The paging cursor for the previous or next page.",
+            "description": "The cursor to figure out where to start fetching",
             "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "sortOrder",
-            "description": "The order the results are sorted in.",
-            "type": "string",
-            "default": "Asc",
-            "enum": [
-              "Asc",
-              "Desc"
-            ]
           }
         ],
         "responses": {
@@ -585,49 +580,6 @@
         }
       }
     },
-    "/v1/games/games-product-info": {
-      "get": {
-        "tags": [
-          "Games"
-        ],
-        "summary": "Gets a list of games' product info, used to purchase a game",
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "universeIds",
-            "description": "A list of universe Ids. Cannot exceed a maximum of 100 IDs.",
-            "required": true,
-            "type": "array",
-            "items": {
-              "format": "int64",
-              "type": "integer"
-            },
-            "collectionFormat": "csv"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Web.WebAPI.Models.ApiArrayResponse[Roblox.Games.Api.Models.Response.GameProductResponse]"
-            }
-          },
-          "400": {
-            "description": "8: No universe IDs were specified.\r\n9: Too many universe IDs were requested."
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "Games:GetGamesProductsInfo"
-          ]
-        }
-      }
-    },
     "/v1/games/game-thumbnail": {
       "get": {
         "tags": [
@@ -736,6 +688,49 @@
           "obsoleteMessage": "Use https://thumbnails.roblox.com/docs#!/Games/get_v1_games_icons instead",
           "metricIds": [
             "Games:GetGameThumbnails"
+          ]
+        }
+      }
+    },
+    "/v1/games/games-product-info": {
+      "get": {
+        "tags": [
+          "Games"
+        ],
+        "summary": "Gets a list of games' product info, used to purchase a game",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "universeIds",
+            "description": "A list of universe Ids. Cannot exceed a maximum of 100 IDs.",
+            "required": true,
+            "type": "array",
+            "items": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "collectionFormat": "csv"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Web.WebAPI.Models.ApiArrayResponse[Roblox.Games.Api.Models.Response.GameProductResponse]"
+            }
+          },
+          "400": {
+            "description": "8: No universe IDs were specified.\r\n9: Too many universe IDs were requested."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Games:GetGamesProductsInfo"
           ]
         }
       }
@@ -1810,6 +1805,10 @@
           "format": "int64",
           "description": "the expected price of the vip server",
           "type": "integer"
+        },
+        "isPurchaseConfirmed": {
+          "description": "Optional bool to confirm intention to purchase multiple private servers in quick succession.",
+          "type": "boolean"
         }
       }
     },
@@ -3043,36 +3042,6 @@
         }
       }
     },
-    "Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[System.Int64]": {
-      "type": "object",
-      "properties": {
-        "SortOrder": {
-          "format": "int32",
-          "description": " ['Asc' = 1, 'Desc' = 2]",
-          "enum": [
-            1,
-            2
-          ],
-          "type": "integer",
-          "readOnly": true
-        },
-        "PagingDirection": {
-          "format": "int32",
-          "description": " ['Forward' = 1, 'Backward' = 2]",
-          "enum": [
-            1,
-            2
-          ],
-          "type": "integer",
-          "readOnly": true
-        },
-        "Count": {
-          "format": "int32",
-          "type": "integer",
-          "readOnly": true
-        }
-      }
-    },
     "Roblox.Web.Responses.Games.GameServerResponse": {
       "description": "Game server list response model.",
       "type": "object",
@@ -3152,17 +3121,6 @@
     },
     "Roblox.Web.WebAPI.ApiEmptyResponseModel": {
       "type": "object"
-    },
-    "Roblox.Web.WebAPI.ExclusiveStartRequest[System.Int64]": {
-      "type": "object",
-      "properties": {
-        "ExclusiveStartKeyInfo": {
-          "$ref": "#/definitions/Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[System.Int64]"
-        },
-        "CursorRecipe": {
-          "type": "string"
-        }
-      }
     },
     "Roblox.Web.WebAPI.Models.ApiArrayResponse[Roblox.Games.Api.Models.Response.GameDetailResponse]": {
       "type": "object",

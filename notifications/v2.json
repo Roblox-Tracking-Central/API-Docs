@@ -1641,7 +1641,7 @@
       "type": "object",
       "properties": {
         "notificationType": {
-          "description": "Type of notification to mark category as read ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'Sendr' = 12, 'ExperienceInvitation' = 13]",
+          "description": "Type of notification to mark category as read ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'GroupJoinRequestAccepted' = 12, 'Sendr' = 13, 'ExperienceInvitation' = 14]",
           "enum": [
             "Test",
             "FriendRequestReceived",
@@ -1655,6 +1655,7 @@
             "TeamCreateInvite",
             "GameUpdate",
             "DeveloperMetricsAvailable",
+            "GroupJoinRequestAccepted",
             "Sendr",
             "ExperienceInvitation"
           ],
@@ -1722,7 +1723,7 @@
       "type": "object",
       "properties": {
         "notificationSourceType": {
-          "description": "Type of notication source ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'Sendr' = 12, 'ExperienceInvitation' = 13]",
+          "description": "Type of notication source ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'GroupJoinRequestAccepted' = 12, 'Sendr' = 13, 'ExperienceInvitation' = 14]",
           "enum": [
             "Test",
             "FriendRequestReceived",
@@ -1736,6 +1737,7 @@
             "TeamCreateInvite",
             "GameUpdate",
             "DeveloperMetricsAvailable",
+            "GroupJoinRequestAccepted",
             "Sendr",
             "ExperienceInvitation"
           ],
@@ -1801,7 +1803,7 @@
       "type": "object",
       "properties": {
         "sourceType": {
-          "description": "Type of the notification source ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'Sendr' = 12, 'ExperienceInvitation' = 13]",
+          "description": "Type of the notification source ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'GroupJoinRequestAccepted' = 12, 'Sendr' = 13, 'ExperienceInvitation' = 14]",
           "enum": [
             "Test",
             "FriendRequestReceived",
@@ -1815,6 +1817,7 @@
             "TeamCreateInvite",
             "GameUpdate",
             "DeveloperMetricsAvailable",
+            "GroupJoinRequestAccepted",
             "Sendr",
             "ExperienceInvitation"
           ],
@@ -1831,7 +1834,7 @@
           "type": "string"
         },
         "notificationSourceType": {
-          "description": "Type of the notification source ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'Sendr' = 12, 'ExperienceInvitation' = 13]",
+          "description": "Type of the notification source ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'GroupJoinRequestAccepted' = 12, 'Sendr' = 13, 'ExperienceInvitation' = 14]",
           "enum": [
             "Test",
             "FriendRequestReceived",
@@ -1845,6 +1848,7 @@
             "TeamCreateInvite",
             "GameUpdate",
             "DeveloperMetricsAvailable",
+            "GroupJoinRequestAccepted",
             "Sendr",
             "ExperienceInvitation"
           ],
@@ -1853,6 +1857,10 @@
         "eventDate": {
           "format": "date-time",
           "description": "Datetime when the notification stream entry event had occured",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "Relative timestamp for sendr notification stream entry",
           "type": "string"
         },
         "isInteracted": {
@@ -1949,7 +1957,7 @@
       "type": "object",
       "properties": {
         "notificationSourceType": {
-          "description": "Notification source type ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'Sendr' = 12, 'ExperienceInvitation' = 13]",
+          "description": "Notification source type ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'GroupJoinRequestAccepted' = 12, 'Sendr' = 13, 'ExperienceInvitation' = 14]",
           "enum": [
             "Test",
             "FriendRequestReceived",
@@ -1963,6 +1971,7 @@
             "TeamCreateInvite",
             "GameUpdate",
             "DeveloperMetricsAvailable",
+            "GroupJoinRequestAccepted",
             "Sendr",
             "ExperienceInvitation"
           ],
@@ -2033,7 +2042,7 @@
       "type": "object",
       "properties": {
         "notificationSourceType": {
-          "description": "Type of the notification ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'Sendr' = 12, 'ExperienceInvitation' = 13]",
+          "description": "Type of the notification ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'GroupJoinRequestAccepted' = 12, 'Sendr' = 13, 'ExperienceInvitation' = 14]",
           "enum": [
             "Test",
             "FriendRequestReceived",
@@ -2047,6 +2056,7 @@
             "TeamCreateInvite",
             "GameUpdate",
             "DeveloperMetricsAvailable",
+            "GroupJoinRequestAccepted",
             "Sendr",
             "ExperienceInvitation"
           ],
@@ -2307,7 +2317,7 @@
           "description": "List of strings to specify the opted out notification source types",
           "type": "array",
           "items": {
-            "description": " ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'Sendr' = 12, 'ExperienceInvitation' = 13]",
+            "description": " ['Test' = 0, 'FriendRequestReceived' = 1, 'FriendRequestAccepted' = 2, 'PartyInviteReceived' = 3, 'PartyMemberJoined' = 4, 'ChatNewMessage' = 5, 'PrivateMessageReceived' = 6, 'UserAddedToPrivateServerWhiteList' = 7, 'ConversationUniverseChanged' = 8, 'TeamCreateInvite' = 9, 'GameUpdate' = 10, 'DeveloperMetricsAvailable' = 11, 'GroupJoinRequestAccepted' = 12, 'Sendr' = 13, 'ExperienceInvitation' = 14]",
             "enum": [
               "Test",
               "FriendRequestReceived",
@@ -2321,6 +2331,7 @@
               "TeamCreateInvite",
               "GameUpdate",
               "DeveloperMetricsAvailable",
+              "GroupJoinRequestAccepted",
               "Sendr",
               "ExperienceInvitation"
             ],

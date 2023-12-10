@@ -314,144 +314,6 @@
         }
       }
     },
-    "/v1/avatar-assets/{assetType}/upload-captcha-test": {
-      "post": {
-        "tags": [
-          "AvatarAssetsUpload"
-        ],
-        "summary": "An endpoint to check if captcha is needed for an upload of the given asset type",
-        "consumes": [
-          "application/json",
-          "text/json"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "assetType",
-            "description": "",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
-            "enum": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              10,
-              11,
-              12,
-              13,
-              16,
-              17,
-              18,
-              19,
-              21,
-              22,
-              24,
-              25,
-              26,
-              27,
-              28,
-              29,
-              30,
-              31,
-              32,
-              33,
-              34,
-              35,
-              37,
-              38,
-              39,
-              40,
-              41,
-              42,
-              43,
-              44,
-              45,
-              46,
-              47,
-              48,
-              49,
-              50,
-              51,
-              52,
-              53,
-              54,
-              55,
-              56,
-              59,
-              60,
-              61,
-              62,
-              63,
-              64,
-              65,
-              66,
-              67,
-              68,
-              69,
-              70,
-              71,
-              72,
-              73,
-              74,
-              75,
-              76,
-              77,
-              78,
-              79,
-              80
-            ]
-          },
-          {
-            "in": "query",
-            "name": "groupId",
-            "description": "",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "in": "body",
-            "name": "captchaTokenRequest",
-            "description": "",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Roblox.Web.Captcha.Models.Request.CaptchaTokenRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.ItemConfiguration.Api.AvatarAssetUploadCaptchaCheckResponse"
-            }
-          },
-          "401": {
-            "description": "0: Authorization has been denied for this request."
-          },
-          "403": {
-            "description": "0: Token Validation Failed"
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "AvatarAssetsUpload:IsCaptchaNeeded"
-          ]
-        }
-      }
-    },
     "/v1/creations/get-asset-details": {
       "post": {
         "tags": [
@@ -662,24 +524,6 @@
         }
       }
     },
-    "Roblox.ItemConfiguration.Api.AvatarAssetUploadCaptchaCheckResponse": {
-      "description": "The response model for checking if captcha is needed for uploading an avatar asset",
-      "type": "object",
-      "properties": {
-        "success": {
-          "description": "Whether the check was successful",
-          "type": "boolean"
-        },
-        "message": {
-          "description": "The message field for running the captcha prompt on the client",
-          "type": "string"
-        },
-        "fieldData": {
-          "description": "An arbitrary string of field data for use with the given captcha provider",
-          "type": "string"
-        }
-      }
-    },
     "Roblox.ItemConfiguration.Api.CreateItemTagRequest": {
       "description": "Request model to add a tag to an item",
       "type": "object",
@@ -824,23 +668,6 @@
         "count": {
           "format": "int32",
           "type": "integer"
-        }
-      }
-    },
-    "Roblox.Web.Captcha.Models.Request.CaptchaTokenRequest": {
-      "type": "object",
-      "properties": {
-        "captchaId": {
-          "type": "string"
-        },
-        "captchaToken": {
-          "type": "string"
-        },
-        "captchaProvider": {
-          "type": "string"
-        },
-        "challengeId": {
-          "type": "string"
         }
       }
     },

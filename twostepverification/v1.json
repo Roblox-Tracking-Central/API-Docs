@@ -241,6 +241,64 @@
         }
       }
     },
+    "/v1/users/{userId}/challenges/cross-device/retract": {
+      "post": {
+        "tags": [
+          "CrossDevice"
+        ],
+        "summary": "Reverts a user's dialog state from ACTIVE to PENDING.",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "The user ID.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "The Roblox.TwoStepVerification.Api.RetractDialogRequest.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.TwoStepVerification.Api.RetractDialogRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.TwoStepVerification.Api.RetractDialogResponse"
+            }
+          },
+          "400": {
+            "description": "1: Invalid challenge ID.\r\n2: The user ID is invalid."
+          },
+          "403": {
+            "description": "0: Token Validation Failed\r\n19: Challenge denied."
+          },
+          "503": {
+            "description": "7: Two step verification is currently under maintenance."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "CrossDevice:RetractDialog"
+          ]
+        }
+      }
+    },
     "/v1/users/{userId}/challenges/cross-device/retry": {
       "post": {
         "tags": [
@@ -1859,6 +1917,36 @@
           }
         }
       }
+    },
+    "Roblox.TwoStepVerification.Api.RetractDialogRequest": {
+      "description": "Request parameters for retracting a Cross Device dialog from state ACTIVE to PENDING.",
+      "type": "object",
+      "properties": {
+        "challengeId": {
+          "description": "The two step verification challenge ID.",
+          "type": "string"
+        },
+        "actionType": {
+          "format": "int32",
+          "description": "The Roblox.TwoStepVerification.Client.TwoStepVerificationActionType associated with the challenge. ['Unknown' = 0, 'Login' = 1, 'RobuxSpend' = 2, 'ItemTrade' = 3, 'Resale' = 4, 'PasswordReset' = 5, 'RevertAccount' = 6, 'Generic' = 7, 'GenericWithRecoveryCodes' = 8]",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "type": "integer"
+        }
+      }
+    },
+    "Roblox.TwoStepVerification.Api.RetractDialogResponse": {
+      "description": "Result for a successful attempt to retract a Cross Device state from ACTIVE to PENDING.",
+      "type": "object"
     },
     "Roblox.TwoStepVerification.Api.RetryApprovalRequest": {
       "description": "Request parameters for retrying a Cross Device two step verification approval.",
