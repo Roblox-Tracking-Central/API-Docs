@@ -3918,10 +3918,10 @@
           "type": "integer"
         },
         "contentType": {
-          "description": "The enum representing the type of request while requesting name/description history ['UniverseDisplayName' = 0, 'UniverseDisplayDescription' = 1, 'BadgeDisplayName' = 2, 'BadgeDisplayDescription' = 3, 'DeveloperProductDisplayName' = 4, 'DeveloperProductDisplayDescription' = 5, 'GamePassDisplayName' = 6, 'GamePassDisplayDescription' = 7]",
+          "description": "The enum representing the type of request while requesting name/description history ['UniverseDisplayNames' = 0, 'UniverseDisplayDescriptions' = 1, 'BadgeDisplayName' = 2, 'BadgeDisplayDescription' = 3, 'DeveloperProductDisplayName' = 4, 'DeveloperProductDisplayDescription' = 5, 'GamePassDisplayName' = 6, 'GamePassDisplayDescription' = 7]",
           "enum": [
-            "UniverseDisplayName",
-            "UniverseDisplayDescription",
+            "UniverseDisplayNames",
+            "UniverseDisplayDescriptions",
             "BadgeDisplayName",
             "BadgeDisplayDescription",
             "DeveloperProductDisplayName",
