@@ -697,7 +697,7 @@
         "tags": [
           "Favorites"
         ],
-        "summary": "Lists the bundles favorited by a given user with the given bundle subtypeId\r\nFavorites Service doesn't support exclusive start paging or tracking total favorited bundles",
+        "summary": "Lists the bundles favorited by a given user with the given bundle subtypeId.\r\nAfter 1/31/2024, only cursor based pagination will be supported.",
         "produces": [
           "application/json",
           "text/json"
@@ -730,6 +730,17 @@
             "type": "integer",
             "format": "int32",
             "default": 24
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "isPrevious",
+            "type": "boolean",
+            "default": false
           }
         ],
         "responses": {
@@ -1531,6 +1542,14 @@
         "moreFavorites": {
           "description": "True if there exists a next page of favorited bundles.",
           "type": "boolean"
+        },
+        "nextCursor": {
+          "description": "Pagination cursor for the next page.",
+          "type": "string"
+        },
+        "previousCursor": {
+          "description": "Pagination cursor for the previous page.",
+          "type": "string"
         }
       }
     },
