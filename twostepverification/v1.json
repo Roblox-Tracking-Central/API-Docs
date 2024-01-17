@@ -1876,10 +1876,6 @@
         "receiveWarningsOnDisableTwoStep": {
           "description": "Whether users should receive additional warnings when disabling 2SV.",
           "type": "boolean"
-        },
-        "isAndroidSecurityKeyEnabled": {
-          "description": "Whether Android security keys is enabled.",
-          "type": "boolean"
         }
       }
     },
