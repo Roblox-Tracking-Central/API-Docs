@@ -1159,6 +1159,10 @@
         },
         "isRoactChatEnabled": {
           "type": "boolean"
+        },
+        "webChatEventSampleRate": {
+          "format": "int32",
+          "type": "integer"
         }
       }
     },
