@@ -124,6 +124,14 @@
         "verificationCategory": {
           "description": "Gets the verification category the user needs. Empty string if unnecessary.",
           "type": "string"
+        },
+        "consequenceTransparencyMessage": {
+          "description": "The consequence transparency message for the European Union Digital Services Act.",
+          "type": "string"
+        },
+        "showAppealsProcessLink": {
+          "description": "Whether or not to show the learn more message for the European Union Digital Services Act.",
+          "type": "boolean"
         }
       }
     },
