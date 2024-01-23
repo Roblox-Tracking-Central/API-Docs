@@ -374,6 +374,15 @@
         "isEditable": {
           "description": "Whether the outfit can be edited by the user",
           "type": "boolean"
+        },
+        "universeId": {
+          "format": "int64",
+          "description": "The universe id of the outfit, null when outfit is not created in-experience",
+          "type": "integer"
+        },
+        "moderationStatus": {
+          "description": "The moderation status of the outfit, not applicable when outfit is created outside experience",
+          "type": "string"
         }
       }
     },
