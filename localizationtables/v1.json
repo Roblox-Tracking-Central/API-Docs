@@ -1487,6 +1487,9 @@
         },
         "delete": {
           "type": "boolean"
+        },
+        "changeAgent": {
+          "$ref": "#/definitions/Roblox.Localizationtables.Localizationtables.V1.ChangeAgent"
         }
       }
     },
@@ -1613,6 +1616,33 @@
           "items": {
             "$ref": "#/definitions/Roblox.LocalizationTables.Api.ModifiedEntry"
           }
+        }
+      }
+    },
+    "Roblox.Localizationtables.Localizationtables.V1.ChangeAgent": {
+      "type": "object",
+      "properties": {
+        "ChangeAgentType": {
+          "description": " ['Invalid' = 0, 'User' = 1, 'Automation' = 2, 'Default' = 3]",
+          "enum": [
+            "Invalid",
+            "User",
+            "Automation",
+            "Default"
+          ],
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "OptionalIdCase": {
+          "description": " ['None' = 0, 'Id' = 2]",
+          "enum": [
+            "None",
+            "Id"
+          ],
+          "type": "string",
+          "readOnly": true
         }
       }
     },
