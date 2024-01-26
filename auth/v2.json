@@ -1580,6 +1580,9 @@
         "accountBlob": {
           "description": "Account Switcher blob, which stores the accounts that can be switchd into. An empty or null value implies \r\nthat no accounts are available to switch into.",
           "type": "string"
+        },
+        "secureAuthenticationIntent": {
+          "$ref": "#/definitions/Roblox.Authentication.Api.Models.Request.SecureAuthenticationIntentModel"
         }
       }
     },
