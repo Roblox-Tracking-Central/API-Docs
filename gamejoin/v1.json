@@ -399,6 +399,10 @@
       "description": "Request model for game join.",
       "type": "object",
       "properties": {
+        "isoContext": {
+          "description": "Internal usage only field for some request context.",
+          "type": "string"
+        },
         "gameJoinAttemptId": {
           "format": "uuid",
           "description": "The GameJoin Attempt Id for this game join request",
