@@ -1314,9 +1314,23 @@
           "Authentication"
         ],
         "summary": "Logs out user from all other sessions.",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
         "produces": [
           "application/json",
           "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Request.LogoutFromAllSessionsAndReauthenticateRequest"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -2232,6 +2246,9 @@
         },
         "newPassword": {
           "type": "string"
+        },
+        "secureAuthenticationIntent": {
+          "$ref": "#/definitions/Roblox.Authentication.Api.Models.Request.SecureAuthenticationIntentModel"
         }
       }
     },
@@ -2600,6 +2617,14 @@
         "all": {
           "description": "Whether to include credentials that aren't for login, to resolve naming conflicts.",
           "type": "boolean"
+        }
+      }
+    },
+    "Roblox.Authentication.Api.Models.Request.LogoutFromAllSessionsAndReauthenticateRequest": {
+      "type": "object",
+      "properties": {
+        "SecureAuthenticationIntent": {
+          "$ref": "#/definitions/Roblox.Authentication.Api.Models.Request.SecureAuthenticationIntentModel"
         }
       }
     },
