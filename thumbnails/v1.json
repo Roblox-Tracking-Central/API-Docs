@@ -27,6 +27,13 @@
             "required": true,
             "type": "integer",
             "format": "int64"
+          },
+          {
+            "in": "header",
+            "name": "Roblox-Place-Id",
+            "description": "(optional) placeid",
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "responses": {
@@ -70,6 +77,13 @@
               "type": "integer"
             },
             "collectionFormat": "csv"
+          },
+          {
+            "in": "header",
+            "name": "Roblox-Place-Id",
+            "description": "(optional) placeid",
+            "type": "integer",
+            "format": "int64"
           },
           {
             "in": "query",
@@ -177,6 +191,13 @@
             "name": "assetId",
             "description": "The asset id.",
             "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "header",
+            "name": "Roblox-Place-Id",
+            "description": "(optional) placeid",
             "type": "integer",
             "format": "int64"
           }
@@ -1364,6 +1385,13 @@
           "text/json"
         ],
         "parameters": [
+          {
+            "in": "header",
+            "name": "Roblox-Place-Id",
+            "description": "(optional) placeid",
+            "type": "integer",
+            "format": "int64"
+          },
           {
             "in": "body",
             "name": "requests",

@@ -413,7 +413,7 @@
             }
           },
           "400": {
-            "description": "3: The user is invalid or does not exist."
+            "description": "1: The group is invalid or does not exist.\r\n3: The user is invalid or does not exist."
           },
           "401": {
             "description": "0: Authorization has been denied for this request."
@@ -3870,7 +3870,7 @@
       }
     },
     "Roblox.Groups.Api.GroupJoinRequestResponse": {
-      "description": "Response model for Roblox.GroupJoinRequests",
+      "description": "Response model for !:GroupJoinRequests",
       "type": "object",
       "properties": {
         "requester": {

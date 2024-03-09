@@ -1713,6 +1713,9 @@
         "password": {
           "description": "The user's password.",
           "type": "string"
+        },
+        "secureAuthenticationIntent": {
+          "$ref": "#/definitions/Roblox.TwoStepVerification.Api.Models.Request.SecureAuthenticationIntentModel"
         }
       }
     },
@@ -1880,6 +1883,25 @@
         "isAndroidSecurityKeyEnabled": {
           "description": "Whether Android security keys is enabled.",
           "type": "boolean"
+        }
+      }
+    },
+    "Roblox.TwoStepVerification.Api.Models.Request.SecureAuthenticationIntentModel": {
+      "description": "Model describing secure auth intent.",
+      "type": "object",
+      "properties": {
+        "clientPublicKey": {
+          "type": "string"
+        },
+        "clientEpochTimestamp": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "saiSignature": {
+          "type": "string"
+        },
+        "serverNonce": {
+          "type": "string"
         }
       }
     },

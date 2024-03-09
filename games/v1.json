@@ -2355,6 +2355,17 @@
           "format": "double",
           "description": "TokenExpiryInSeconds",
           "type": "number"
+        },
+        "topicLayoutData": {
+          "$ref": "#/definitions/Roblox.Games.Api.Models.Response.GameSortTopicLayoutData"
+        }
+      }
+    },
+    "Roblox.Games.Api.Models.Response.GameSortTopicLayoutData": {
+      "type": "object",
+      "properties": {
+        "infoText": {
+          "type": "string"
         }
       }
     },

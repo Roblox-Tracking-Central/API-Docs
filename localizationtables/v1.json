@@ -1490,6 +1490,10 @@
         },
         "changeAgent": {
           "$ref": "#/definitions/Roblox.Localizationtables.Localizationtables.V1.ChangeAgent"
+        },
+        "updatedTime": {
+          "format": "date-time",
+          "type": "string"
         }
       }
     },
@@ -1546,6 +1550,10 @@
         },
         "translator": {
           "$ref": "#/definitions/Roblox.LocalizationTables.Api.Translator"
+        },
+        "updatedTime": {
+          "format": "date-time",
+          "type": "string"
         },
         "feedbackCount": {
           "format": "int32",

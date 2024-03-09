@@ -1029,6 +1029,39 @@
         }
       }
     },
+    "/v1/external/access": {
+      "post": {
+        "tags": [
+          "ExternalIdentitiesGateway"
+        ],
+        "summary": "Signs a user up for Roblox and links the account to the authenticated external provider ID",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Request.ExternalAccessRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "ExternalIdentitiesGateway:Access"
+          ]
+        }
+      }
+    },
     "/v1/external/login": {
       "post": {
         "tags": [
@@ -1259,7 +1292,7 @@
             "description": "0: An unexpected error occurred.\r\n3: Username and Password are required. Please try again.\r\n8: Login with received credential type is not supported."
           },
           "403": {
-            "description": "0: Token Validation Failed\r\n1: Incorrect username or password. Please try again.\r\n2: You must pass the robot test before logging in.\r\n4: Account has been locked. Please request a password reset.\r\n5: Unable to login. Please use Social Network sign on.\r\n6: Account issue. Please contact Support.\r\n9: Unable to login with provided credentials. Default login is required.\r\n10: Received credentials are unverified.\r\n12: Existing login session found. Please log out first.\r\n14: The account is unable to log in. Please log in to the LuoBu app.\r\n15: Too many attempts. Please wait a bit."
+            "description": "0: Token Validation Failed\r\n1: Incorrect username or password. Please try again.\r\n2: You must pass the robot test before logging in.\r\n4: Account has been locked. Please request a password reset.\r\n5: Unable to login. Please use Social Network sign on.\r\n6: Account issue. Please contact Support.\r\n9: Unable to login with provided credentials. Default login is required.\r\n10: Received credentials are unverified.\r\n12: Existing login session found. Please log out first.\r\n14: The account is unable to log in. Please log in to the LuoBu app.\r\n15: Too many attempts. Please wait a bit.\r\n27: The account is unable to login. Please log in with the VNG app."
           },
           "429": {
             "description": "7: Too many attempts. Please wait a bit."
@@ -2444,6 +2477,32 @@
         }
       }
     },
+    "Roblox.Authentication.Api.Models.Request.ExternalAccessRequest": {
+      "description": "Model for External Access requests",
+      "type": "object",
+      "properties": {
+        "authenticationProof": {
+          "description": "Primary authentication token. This should be all most providers need. \r\nIf something else is needed, it could probably be included in the additional info payload.",
+          "type": "string"
+        },
+        "identityProviderPlatformType": {
+          "format": "int32",
+          "description": "External Identity Provider Platform type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2, 'Web' = 3]",
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "type": "integer"
+        },
+        "additionalInfoPayload": {
+          "description": "External provider specific additional info payload in json",
+          "type": "object",
+          "additionalProperties": { }
+        }
+      }
+    },
     "Roblox.Authentication.Api.Models.Request.ExternalLoginAndLinkRequest": {
       "description": "Model for External Login and Link requests",
       "type": "object",
@@ -2475,11 +2534,12 @@
         },
         "identityProvider": {
           "format": "int32",
-          "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2]",
+          "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2, 'Web' = 3]",
           "enum": [
             0,
             1,
-            2
+            2,
+            3
           ],
           "type": "integer"
         },
@@ -2500,11 +2560,12 @@
         },
         "identityProvider": {
           "format": "int32",
-          "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2]",
+          "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2, 'Web' = 3]",
           "enum": [
             0,
             1,
-            2
+            2,
+            3
           ],
           "type": "integer"
         },
@@ -2542,11 +2603,12 @@
         },
         "identityProvider": {
           "format": "int32",
-          "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2]",
+          "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2, 'Web' = 3]",
           "enum": [
             0,
             1,
-            2
+            2,
+            3
           ],
           "type": "integer"
         },
@@ -2563,11 +2625,12 @@
       "properties": {
         "identityProvider": {
           "format": "int32",
-          "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2]",
+          "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2, 'Web' = 3]",
           "enum": [
             0,
             1,
-            2
+            2,
+            3
           ],
           "type": "integer"
         },

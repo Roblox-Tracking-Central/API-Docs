@@ -967,6 +967,71 @@
     }
   },
   "definitions": {
+    "Avatar.Common.Models.AccessoryPositionModel": {
+      "type": "object",
+      "properties": {
+        "xPosition": {
+          "format": "double",
+          "type": "number"
+        },
+        "yPosition": {
+          "format": "double",
+          "type": "number"
+        },
+        "zPosition": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "Avatar.Common.Models.AccessoryRefinementModel": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "$ref": "#/definitions/Avatar.Common.Models.AccessoryPositionModel"
+        },
+        "rotation": {
+          "$ref": "#/definitions/Avatar.Common.Models.AccessoryRotationModel"
+        },
+        "scale": {
+          "$ref": "#/definitions/Avatar.Common.Models.AccessoryScaleModel"
+        }
+      }
+    },
+    "Avatar.Common.Models.AccessoryRotationModel": {
+      "type": "object",
+      "properties": {
+        "xRotation": {
+          "format": "double",
+          "type": "number"
+        },
+        "yRotation": {
+          "format": "double",
+          "type": "number"
+        },
+        "zRotation": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "Avatar.Common.Models.AccessoryScaleModel": {
+      "type": "object",
+      "properties": {
+        "xScale": {
+          "format": "double",
+          "type": "number"
+        },
+        "yScale": {
+          "format": "double",
+          "type": "number"
+        },
+        "zScale": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
     "Roblox.Api.Avatar.Controllers.V1.AvatarController.EmptyResponse": {
       "description": "Empty response, will be in WebAPI base soon",
       "type": "object"
@@ -1249,6 +1314,456 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Roblox.Api.Avatar.Models.AssetTypeRulesModel"
+          }
+        },
+        "accessoryRefinementLowerBounds": {
+          "description": "The lower bounds for accessory refinement settings.",
+          "type": "object",
+          "properties": {
+            "Image": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "TShirt": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Audio": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Mesh": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Lua": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "HTML": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Text": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Hat": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Place": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Model": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Shirt": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Pants": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Decal": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Avatar": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Head": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Face": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Gear": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Badge": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "GroupEmblem": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Animation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Arms": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Legs": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Torso": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "RightArm": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "LeftArm": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "LeftLeg": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "RightLeg": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Package": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "YouTubeVideo": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "GamePass": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "App": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Code": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Plugin": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "SolidModel": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "MeshPart": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "HairAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "FaceAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "NeckAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "ShoulderAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "FrontAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "BackAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "WaistAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "ClimbAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "DeathAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "FallAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "IdleAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "JumpAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "RunAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "SwimAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "WalkAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "PoseAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "LocalizationTableManifest": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "LocalizationTableTranslation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "EmoteAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Video": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "TexturePack": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "TShirtAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "ShirtAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "PantsAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "JacketAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "SweaterAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "ShortsAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "LeftShoeAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "RightShoeAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "DressSkirtAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "FontFamily": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "FontFace": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "MeshHiddenSurfaceRemoval": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "EyebrowAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "EyelashAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "MoodAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "DynamicHead": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "CodeSnippet": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            }
+          }
+        },
+        "accessoryRefinementUpperBounds": {
+          "description": "The lower bounds for accessory refinement settings.",
+          "type": "object",
+          "properties": {
+            "Image": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "TShirt": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Audio": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Mesh": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Lua": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "HTML": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Text": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Hat": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Place": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Model": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Shirt": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Pants": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Decal": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Avatar": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Head": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Face": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Gear": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Badge": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "GroupEmblem": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Animation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Arms": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Legs": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Torso": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "RightArm": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "LeftArm": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "LeftLeg": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "RightLeg": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Package": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "YouTubeVideo": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "GamePass": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "App": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Code": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Plugin": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "SolidModel": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "MeshPart": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "HairAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "FaceAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "NeckAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "ShoulderAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "FrontAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "BackAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "WaistAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "ClimbAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "DeathAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "FallAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "IdleAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "JumpAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "RunAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "SwimAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "WalkAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "PoseAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "LocalizationTableManifest": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "LocalizationTableTranslation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "EmoteAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "Video": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "TexturePack": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "TShirtAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "ShirtAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "PantsAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "JacketAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "SweaterAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "ShortsAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "LeftShoeAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "RightShoeAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "DressSkirtAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "FontFamily": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "FontFace": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "MeshHiddenSurfaceRemoval": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "EyebrowAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "EyelashAccessory": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "MoodAnimation": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "DynamicHead": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            },
+            "CodeSnippet": {
+              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+            }
           }
         },
         "bodyColorsPalette": {

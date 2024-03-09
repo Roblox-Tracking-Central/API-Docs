@@ -51,68 +51,6 @@
         }
       }
     },
-    "/v3/outfits/{userOutfitId}/update": {
-      "post": {
-        "tags": [
-          "OutfitsV3"
-        ],
-        "summary": "Updates the contents of the outfit.",
-        "description": "Fails if the user does not own any of the assetIds or if they are not wearable asset types.",
-        "consumes": [
-          "application/json",
-          "text/json"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "userOutfitId",
-            "description": "The user outfit id.",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "in": "body",
-            "name": "outfitUpdateModel",
-            "description": "The updated outfit",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Roblox.Api.Avatar.Models.OutfitUpdateModelV3"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Web.WebAPI.ApiEmptyResponseModel"
-            }
-          },
-          "400": {
-            "description": "1: The specified userOutfit does not exist!\r\n3: Body colors must be valid BrickColor IDs\r\n4: Invalid outfit name\r\n5: Asset is not wearable by you\r\n7: Invalid assetIds\r\n8: Invalid Player Avatar Type. Valid types are R6 and R15"
-          },
-          "401": {
-            "description": "0: Authorization has been denied for this request."
-          },
-          "403": {
-            "description": "0: Token Validation Failed\r\n2: You don't have permission to update this outfit."
-          },
-          "500": {
-            "description": "6: An error occurred while trying to update the outfit"
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "OutfitsV3:UpdateOutfit"
-          ]
-        }
-      }
-    },
     "/v3/outfits/create": {
       "post": {
         "tags": [
@@ -143,7 +81,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/Roblox.Web.WebAPI.ApiEmptyResponseModel"
+              "$ref": "#/definitions/Roblox.Api.Avatar.Models.OutfitModel"
             }
           },
           "400": {
@@ -494,9 +432,6 @@
           "type": "number"
         }
       }
-    },
-    "Roblox.Web.WebAPI.ApiEmptyResponseModel": {
-      "type": "object"
     }
   }
 }

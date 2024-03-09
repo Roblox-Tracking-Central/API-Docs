@@ -697,7 +697,7 @@
         "tags": [
           "Favorites"
         ],
-        "summary": "Lists the bundles favorited by a given user with the given bundle subtypeId.\r\nAfter 1/31/2024, only cursor based pagination will be supported.",
+        "summary": "Lists the bundles favorited by a given user with the given bundle subtypeId.\r\nAfter 5/31/2024, only cursor based pagination will be supported.",
         "produces": [
           "application/json",
           "text/json"
@@ -751,13 +751,16 @@
             }
           },
           "400": {
-            "description": "1: Invalid user Id."
+            "description": "1: Invalid user Id.\r\n3: Cannot request so many bundles at once.\r\n9: Invalid pagination request. Please provide only pageNumber or cursor, not both.\r\n10: Invalid previous pagination request. Please provide a cursor when isPrevious is true"
           },
           "401": {
             "description": "0: Authorization has been denied for this request."
           },
           "403": {
             "description": "6: You are not authorized to perform this action.\r\n8: Invalid page number"
+          },
+          "500": {
+            "description": "11: Internal server error. Please check if you have provided correct pagination cursor"
           }
         },
         "properties": {
@@ -987,7 +990,7 @@
         "tags": [
           "Catalog"
         ],
-        "summary": "Returns list of item details",
+        "summary": "Returns list of item details.",
         "consumes": [
           "application/json",
           "text/json"
@@ -1164,6 +1167,9 @@
             ],
             "type": "integer"
           }
+        },
+        "collectibleItemDetail": {
+          "$ref": "#/definitions/Roblox.CatalogHydrationService.CollectibleItemDetail"
         }
       }
     },
@@ -1677,6 +1683,164 @@
         },
         "error": {
           "$ref": "#/definitions/Roblox.Marketplacetopicdiscovery.Topicdiscoveryservice.V1Beta1.Error"
+        }
+      }
+    },
+    "Roblox.CatalogHydrationService.Agent": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "format": "int32",
+          "description": " ['Invalid' = 0, 'User' = 1, 'Group' = 2]",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer"
+        },
+        "userId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "groupId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "idCase": {
+          "format": "int32",
+          "description": " ['None' = 0, 'UserId' = 1, 'GroupId' = 2]",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer"
+        }
+      }
+    },
+    "Roblox.CatalogHydrationService.CollectibleItemDetail": {
+      "type": "object",
+      "properties": {
+        "collectibleItemId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "collectibleProductId": {
+          "type": "string"
+        },
+        "price": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "lowestPrice": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "lowestResalePrice": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "totalQuantity": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "unitsAvailable": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "saleLocation": {
+          "$ref": "#/definitions/Roblox.CatalogHydrationService.SaleLocation"
+        },
+        "hasResellers": {
+          "type": "boolean"
+        },
+        "saleStatus": {
+          "format": "int32",
+          "description": " ['Invalid' = 0, 'Draft' = 1, 'OffSale' = 2, 'OnSale' = 3, 'PendingSale' = 4]",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "quantityLimitPerUser": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "offSaleDeadlineTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "collectibleItemType": {
+          "format": "int32",
+          "description": " ['Invalid' = 0, 'Limited' = 1, 'NonLimited' = 2]",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer"
+        },
+        "lowestAvailableResaleProductId": {
+          "type": "string"
+        },
+        "lowestAvailableResaleItemInstanceId": {
+          "type": "string"
+        },
+        "resaleRestriction": {
+          "format": "int32",
+          "description": " ['Invalid' = 0, 'None' = 1, 'Disabled' = 2]",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer"
+        },
+        "creator": {
+          "$ref": "#/definitions/Roblox.CatalogHydrationService.Agent"
+        }
+      }
+    },
+    "Roblox.CatalogHydrationService.SaleLocation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "format": "int32",
+          "description": " ['Invalid' = 0, 'ShopOnly' = 1, 'MyExperiencesOnly' = 2, 'ShopAndMyExperiences' = 3, 'ExperiencesById' = 4, 'ShopAndAllExperiences' = 5, 'ExperiencesDevApiOnly' = 6]",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "integer"
+        },
+        "universeIds": {
+          "type": "array",
+          "items": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "enabledUniverseIds": {
+          "type": "array",
+          "items": {
+            "format": "int64",
+            "type": "integer"
+          }
         }
       }
     },
