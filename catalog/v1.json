@@ -948,43 +948,6 @@
         }
       }
     },
-    "/v1/bundles/{bundleId}/unpack": {
-      "post": {
-        "tags": [
-          "Bundle"
-        ],
-        "summary": "Unpacks a bundle and grants all of the associated items.\r\nIt may take a few seconds for all items to be granted after the request finishes.",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "bundleId",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "1: Invalid bundle\r\n2: Bundle is not owned"
-          },
-          "401": {
-            "description": "0: Authorization has been denied for this request."
-          },
-          "403": {
-            "description": "0: Token Validation Failed"
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "Bundle:UnpackBundle"
-          ]
-        }
-      }
-    },
     "/v1/catalog/items/details": {
       "post": {
         "tags": [
@@ -1816,7 +1779,7 @@
       "properties": {
         "type": {
           "format": "int32",
-          "description": " ['Invalid' = 0, 'ShopOnly' = 1, 'MyExperiencesOnly' = 2, 'ShopAndMyExperiences' = 3, 'ExperiencesById' = 4, 'ShopAndAllExperiences' = 5, 'ExperiencesDevApiOnly' = 6]",
+          "description": " ['Invalid' = 0, 'ShopOnly' = 1, 'MyExperiencesOnly' = 2, 'ShopAndMyExperiences' = 3, 'ExperiencesById' = 4, 'ShopAndAllExperiences' = 5, 'ExperiencesDevApiOnly' = 6, 'ShopAndExperiencesById' = 7]",
           "enum": [
             0,
             1,
@@ -1824,7 +1787,8 @@
             3,
             4,
             5,
-            6
+            6,
+            7
           ],
           "type": "integer"
         },
