@@ -446,6 +446,15 @@
           "description": "Layered-clothing puffiness",
           "type": "number"
         },
+        "position": {
+          "$ref": "#/definitions/Roblox.Avatarcore.Shared.V3Beta1.AssetPosition"
+        },
+        "rotation": {
+          "$ref": "#/definitions/Roblox.Avatarcore.Shared.V3Beta1.AssetRotation"
+        },
+        "scale": {
+          "$ref": "#/definitions/Roblox.Avatarcore.Shared.V3Beta1.AssetScale"
+        },
         "version": {
           "format": "int32",
           "description": "Client-authoritative meta model format version\r\n- default is always 1",
@@ -756,6 +765,61 @@
         "success": {
           "description": "Whether or not all the outfit contents were successfully worn",
           "type": "boolean"
+        }
+      }
+    },
+    "Roblox.Avatarcore.Shared.V3Beta1.AssetPosition": {
+      "type": "object",
+      "properties": {
+        "X": {
+          "format": "float",
+          "type": "number"
+        },
+        "Y": {
+          "format": "float",
+          "type": "number"
+        },
+        "Z": {
+          "format": "float",
+          "type": "number"
+        }
+      }
+    },
+    "Roblox.Avatarcore.Shared.V3Beta1.AssetRotation": {
+      "type": "object",
+      "properties": {
+        "X": {
+          "format": "float",
+          "type": "number"
+        },
+        "Y": {
+          "format": "float",
+          "type": "number"
+        },
+        "Z": {
+          "format": "float",
+          "type": "number"
+        }
+      }
+    },
+    "Roblox.Avatarcore.Shared.V3Beta1.AssetScale": {
+      "type": "object",
+      "properties": {
+        "Scale": {
+          "format": "float",
+          "type": "number"
+        },
+        "X": {
+          "format": "float",
+          "type": "number"
+        },
+        "Y": {
+          "format": "float",
+          "type": "number"
+        },
+        "Z": {
+          "format": "float",
+          "type": "number"
         }
       }
     },
