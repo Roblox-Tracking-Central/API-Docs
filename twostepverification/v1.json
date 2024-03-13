@@ -1734,6 +1734,9 @@
         "password": {
           "description": "The user's password.",
           "type": "string"
+        },
+        "secureAuthenticationIntent": {
+          "$ref": "#/definitions/Roblox.TwoStepVerification.Api.Models.Request.SecureAuthenticationIntentModel"
         }
       }
     },
