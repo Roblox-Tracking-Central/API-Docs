@@ -1132,7 +1132,7 @@
           }
         },
         "collectibleItemDetail": {
-          "$ref": "#/definitions/Roblox.CatalogHydrationService.CollectibleItemDetail"
+          "$ref": "#/definitions/Roblox.Catalog.Api.CollectibleItemDetail"
         }
       }
     },
@@ -1300,7 +1300,8 @@
             77,
             78,
             79,
-            80
+            80,
+            81
           ],
           "type": "integer"
         },
@@ -1470,7 +1471,7 @@
         },
         "saleLocationType": {
           "format": "int32",
-          "description": "The sale location type of the item. ['NotApplicable' = 0, 'ShopOnly' = 1, 'MyExperiencesOnly' = 2, 'ShopAndMyExperiences' = 3, 'ExperiencesById' = 4, 'ShopAndAllExperiences' = 5, 'ExperiencesDevApiOnly' = 6]",
+          "description": "The sale location type of the item. ['NotApplicable' = 0, 'ShopOnly' = 1, 'MyExperiencesOnly' = 2, 'ShopAndMyExperiences' = 3, 'ExperiencesById' = 4, 'ShopAndAllExperiences' = 5, 'ExperiencesDevApiOnly' = 6, 'ShopAndExperiencesById' = 7]",
           "enum": [
             0,
             1,
@@ -1478,7 +1479,8 @@
             3,
             4,
             5,
-            6
+            6,
+            7
           ],
           "type": "integer"
         },
@@ -1493,6 +1495,89 @@
         "quantityLimitPerUser": {
           "format": "int32",
           "description": "Quantity limit for how many instances a user can buy.",
+          "type": "integer"
+        }
+      }
+    },
+    "Roblox.Catalog.Api.CollectibleItemDetail": {
+      "type": "object",
+      "properties": {
+        "collectibleItemId": {
+          "type": "string"
+        },
+        "collectibleProductId": {
+          "type": "string"
+        },
+        "price": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "lowestPrice": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "lowestResalePrice": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "totalQuantity": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "unitsAvailable": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "saleLocation": {
+          "$ref": "#/definitions/Roblox.Catalog.Api.SaleLocation"
+        },
+        "hasResellers": {
+          "type": "boolean"
+        },
+        "saleStatus": {
+          "format": "int32",
+          "description": " ['Invalid' = 0, 'Draft' = 1, 'OffSale' = 2, 'OnSale' = 3, 'PendingSale' = 4]",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "quantityLimitPerUser": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "offSaleDeadline": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "collectibleItemType": {
+          "format": "int32",
+          "description": "The type of collectible item, limited or non-limited for now. ['Invalid' = 0, 'Limited' = 1, 'NonLimited' = 2]",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer"
+        },
+        "lowestAvailableResaleProductId": {
+          "type": "string"
+        },
+        "lowestAvailableResaleItemInstanceId": {
+          "type": "string"
+        },
+        "resaleRestriction": {
+          "format": "int32",
+          "description": " ['Invalid' = 0, 'None' = 1, 'Disabled' = 2]",
+          "enum": [
+            0,
+            1,
+            2
+          ],
           "type": "integer"
         }
       }
@@ -1586,6 +1671,45 @@
         }
       }
     },
+    "Roblox.Catalog.Api.SaleLocation": {
+      "description": "SaleLocation information for a collectible item (asset or bundle).",
+      "type": "object",
+      "properties": {
+        "saleLocationType": {
+          "format": "int32",
+          "description": " ['NotApplicable' = 0, 'ShopOnly' = 1, 'MyExperiencesOnly' = 2, 'ShopAndMyExperiences' = 3, 'ExperiencesById' = 4, 'ShopAndAllExperiences' = 5, 'ExperiencesDevApiOnly' = 6, 'ShopAndExperiencesById' = 7]",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "type": "integer"
+        },
+        "saleLocationTypeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "universeIds": {
+          "type": "array",
+          "items": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "enabledUniverseIds": {
+          "type": "array",
+          "items": {
+            "format": "int64",
+            "type": "integer"
+          }
+        }
+      }
+    },
     "Roblox.Catalog.Api.Topics.TopicModel": {
       "description": "Response model for avatar topics",
       "type": "object",
@@ -1646,165 +1770,6 @@
         },
         "error": {
           "$ref": "#/definitions/Roblox.Marketplacetopicdiscovery.Topicdiscoveryservice.V1Beta1.Error"
-        }
-      }
-    },
-    "Roblox.CatalogHydrationService.Agent": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "format": "int32",
-          "description": " ['Invalid' = 0, 'User' = 1, 'Group' = 2]",
-          "enum": [
-            0,
-            1,
-            2
-          ],
-          "type": "integer"
-        },
-        "userId": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "groupId": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "idCase": {
-          "format": "int32",
-          "description": " ['None' = 0, 'UserId' = 1, 'GroupId' = 2]",
-          "enum": [
-            0,
-            1,
-            2
-          ],
-          "type": "integer"
-        }
-      }
-    },
-    "Roblox.CatalogHydrationService.CollectibleItemDetail": {
-      "type": "object",
-      "properties": {
-        "collectibleItemId": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "collectibleProductId": {
-          "type": "string"
-        },
-        "price": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "lowestPrice": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "lowestResalePrice": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "totalQuantity": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "unitsAvailable": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "saleLocation": {
-          "$ref": "#/definitions/Roblox.CatalogHydrationService.SaleLocation"
-        },
-        "hasResellers": {
-          "type": "boolean"
-        },
-        "saleStatus": {
-          "format": "int32",
-          "description": " ['Invalid' = 0, 'Draft' = 1, 'OffSale' = 2, 'OnSale' = 3, 'PendingSale' = 4]",
-          "enum": [
-            0,
-            1,
-            2,
-            3,
-            4
-          ],
-          "type": "integer"
-        },
-        "quantityLimitPerUser": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "offSaleDeadlineTime": {
-          "format": "date-time",
-          "type": "string"
-        },
-        "collectibleItemType": {
-          "format": "int32",
-          "description": " ['Invalid' = 0, 'Limited' = 1, 'NonLimited' = 2]",
-          "enum": [
-            0,
-            1,
-            2
-          ],
-          "type": "integer"
-        },
-        "lowestAvailableResaleProductId": {
-          "type": "string"
-        },
-        "lowestAvailableResaleItemInstanceId": {
-          "type": "string"
-        },
-        "resaleRestriction": {
-          "format": "int32",
-          "description": " ['Invalid' = 0, 'None' = 1, 'Disabled' = 2]",
-          "enum": [
-            0,
-            1,
-            2
-          ],
-          "type": "integer"
-        },
-        "creator": {
-          "$ref": "#/definitions/Roblox.CatalogHydrationService.Agent"
-        }
-      }
-    },
-    "Roblox.CatalogHydrationService.SaleLocation": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "format": "int32",
-          "description": " ['Invalid' = 0, 'ShopOnly' = 1, 'MyExperiencesOnly' = 2, 'ShopAndMyExperiences' = 3, 'ExperiencesById' = 4, 'ShopAndAllExperiences' = 5, 'ExperiencesDevApiOnly' = 6, 'ShopAndExperiencesById' = 7]",
-          "enum": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "type": "integer"
-        },
-        "universeIds": {
-          "type": "array",
-          "items": {
-            "format": "int64",
-            "type": "integer"
-          }
-        },
-        "enabledUniverseIds": {
-          "type": "array",
-          "items": {
-            "format": "int64",
-            "type": "integer"
-          }
         }
       }
     },
