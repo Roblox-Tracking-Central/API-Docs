@@ -264,7 +264,7 @@
             "description": "0: Authorization has been denied for this request."
           },
           "403": {
-            "description": "0: Token Validation Failed\r\n1: PIN is locked.\r\n3: There are too many accounts associated with this email address.\r\n11: You must be on the Corporate network to log in."
+            "description": "0: Token Validation Failed\r\n1: PIN is locked.\r\n2: This feature is currently disabled. Please try again later.\r\n3: There are too many accounts associated with this email address.\r\n11: You must be on the Corporate network to log in."
           },
           "409": {
             "description": "4: This is already the current email."
@@ -321,7 +321,7 @@
             "description": "0: Authorization has been denied for this request."
           },
           "403": {
-            "description": "0: Token Validation Failed\r\n1: PIN is locked.\r\n3: There are too many accounts associated with this email address.\r\n11: You must be on the Corporate network to log in."
+            "description": "0: Token Validation Failed\r\n1: PIN is locked.\r\n2: This feature is currently disabled. Please try again later.\r\n3: There are too many accounts associated with this email address.\r\n11: You must be on the Corporate network to log in."
           },
           "409": {
             "description": "4: This is already the current email."
@@ -970,7 +970,7 @@
             "description": "0: Authorization has been denied for this request."
           },
           "403": {
-            "description": "0: Token Validation Failed\r\n1: PIN is locked.\r\n11: You must be on the Corporate network to log in."
+            "description": "0: Token Validation Failed\r\n1: PIN is locked.\r\n2: This feature is currently disabled. Please try again later.\r\n11: You must be on the Corporate network to log in."
           },
           "409": {
             "description": "5: The email is already verified."
