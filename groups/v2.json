@@ -209,6 +209,12 @@
             "name": "includeLocked",
             "required": true,
             "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "includeNotificationPreferences",
+            "required": true,
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -263,6 +269,10 @@
         },
         "role": {
           "$ref": "#/definitions/Roblox.Web.Responses.Groups.GroupRoleBasicResponse"
+        },
+        "isNotificationsEnabled": {
+          "description": "Whether the group notification preferences are enabled for the user",
+          "type": "boolean"
         }
       }
     },

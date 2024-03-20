@@ -553,6 +553,12 @@
             "required": true,
             "type": "integer",
             "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "includeNotificationPreferences",
+            "required": true,
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -2205,6 +2211,12 @@
             "name": "includeLocked",
             "required": true,
             "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "includeNotificationPreferences",
+            "required": true,
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -3063,6 +3075,72 @@
         }
       }
     },
+    "/v1/groups/{groupId}/notification-preference": {
+      "patch": {
+        "tags": [
+          "Groups"
+        ],
+        "summary": "Updates the group's settings",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "description": "The id of the group the user is in.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "request",
+            "description": "Roblox.Groups.Api.UpdateGroupSettingsRequest",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Roblox.Groups.Api.UpdateGroupNotificationPreferenceRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "format": "int32",
+              "description": " ['Unchanged' = 0, 'Created' = 1, 'Deleted' = 2, 'Updated' = 3]",
+              "enum": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "type": "integer"
+            }
+          },
+          "400": {
+            "description": "1: Group is invalid or does not exist."
+          },
+          "401": {
+            "description": "0: Authorization has been denied for this request."
+          },
+          "403": {
+            "description": "0: Token Validation Failed"
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Groups:UpdateGroupNotificationPreference"
+          ]
+        }
+      }
+    },
     "/v1/groups/{groupId}/rolesets/{rolesetId}": {
       "delete": {
         "tags": [
@@ -3914,6 +3992,10 @@
         "isPrimaryGroup": {
           "description": "Whether the group is the user's Primary Group",
           "type": "boolean"
+        },
+        "isNotificationsEnabled": {
+          "description": "Whether the group notification preferences are enabled for the user",
+          "type": "boolean"
         }
       }
     },
@@ -3954,6 +4036,10 @@
         },
         "canConfigure": {
           "description": "If the user can configure the group",
+          "type": "boolean"
+        },
+        "isNotificationsEnabled": {
+          "description": "Whether the group's notification preferences set to enabled for the user",
           "type": "boolean"
         }
       }
@@ -4810,6 +4896,16 @@
         "newName": {
           "description": "The new description returned",
           "type": "string"
+        }
+      }
+    },
+    "Roblox.Groups.Api.UpdateGroupNotificationPreferenceRequest": {
+      "description": "A request model for updating a group's notification preference.",
+      "type": "object",
+      "properties": {
+        "notificationsEnabled": {
+          "description": "Whether the user wants to receive notifications from the group.",
+          "type": "boolean"
         }
       }
     },
