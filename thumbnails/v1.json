@@ -1019,7 +1019,8 @@
             "default": "Png",
             "enum": [
               "Png",
-              "Jpeg"
+              "Jpeg",
+              "Webp"
             ]
           },
           {
@@ -1140,7 +1141,8 @@
             "type": "string",
             "default": "Png",
             "enum": [
-              "Png"
+              "Png",
+              "Webp"
             ]
           },
           {
@@ -1225,7 +1227,8 @@
             "default": "Png",
             "enum": [
               "Png",
-              "Jpeg"
+              "Jpeg",
+              "Webp"
             ]
           },
           {
@@ -1503,6 +1506,39 @@
         },
         "isCircular": {
           "description": "Is the thumbnail circular shape",
+          "type": "boolean"
+        }
+      }
+    },
+    "Roblox.Thumbnails.Common.FormatType": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "Value": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        }
+      }
+    },
+    "Roblox.Thumbnails.Common.ThumbnailImageParameters": {
+      "type": "object",
+      "properties": {
+        "Width": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Height": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Format": {
+          "$ref": "#/definitions/Roblox.Thumbnails.Common.FormatType"
+        },
+        "IsCircular": {
           "type": "boolean"
         }
       }
