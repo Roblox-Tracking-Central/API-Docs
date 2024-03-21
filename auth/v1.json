@@ -2532,7 +2532,7 @@
           "description": "Primary authentication token. This should be all most providers need. \r\nIf something else is needed, it could probably be included in the additional info payload.",
           "type": "string"
         },
-        "IdentityProviderPlatformType": {
+        "identityProvider": {
           "format": "int32",
           "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2, 'Web' = 3]",
           "enum": [
@@ -2601,7 +2601,7 @@
           "description": "Primary authentication token. This should be all most providers need. \r\nIf something else is needed, it could probably be included in the additional info payload.",
           "type": "string"
         },
-        "IdentityProviderPlatformType": {
+        "identityProvider": {
           "format": "int32",
           "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2, 'Web' = 3]",
           "enum": [
@@ -2623,7 +2623,7 @@
       "description": "Model for External Unlink requests",
       "type": "object",
       "properties": {
-        "IdentityProviderPlatformType": {
+        "identityProvider": {
           "format": "int32",
           "description": "External Identity Provider type ['Undefined' = 0, 'Xbox' = 1, 'Playstation' = 2, 'Web' = 3]",
           "enum": [
