@@ -74,8 +74,10 @@
             "description": "0: Authorization has been denied for this request."
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": null,
           "metricIds": [
             "Notifications:GetSettings"
           ]
@@ -731,8 +733,10 @@
             "description": "0: Token Validation Failed"
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": null,
           "metricIds": [
             "Notifications:UpdateNotificationBandSettings"
           ]
@@ -875,8 +879,10 @@
             "description": "0: Token Validation Failed"
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": null,
           "metricIds": [
             "PushNotifications:MarkAsRead"
           ]
@@ -923,8 +929,10 @@
             "description": "0: Token Validation Failed"
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": null,
           "metricIds": [
             "PushNotifications:MarkCategoryAsRead"
           ]
