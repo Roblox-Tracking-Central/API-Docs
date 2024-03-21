@@ -368,8 +368,10 @@
             }
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": "Please use the /asset endpoint instead. Requesting asset content by asset hash is no longer supported.",
           "metricIds": [
             "AssetFetchV2:GetAssetByHash"
           ]
