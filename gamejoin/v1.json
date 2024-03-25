@@ -403,6 +403,11 @@
           "description": "Internal usage only field for some request context.",
           "type": "string"
         },
+        "poiId": {
+          "format": "uuid",
+          "description": "See \"Points of Interest\" project. A GUID that the developer has mapped to a special piece in their experience",
+          "type": "string"
+        },
         "gameJoinAttemptId": {
           "format": "uuid",
           "description": "The GameJoin Attempt Id for this game join request",
@@ -921,6 +926,12 @@
           "type": "integer"
         },
         "PrivateServerID": {
+          "type": "string"
+        },
+        "PointOfInterestID": {
+          "type": "string"
+        },
+        "EphemeralEarlyPubKey": {
           "type": "string"
         }
       }
