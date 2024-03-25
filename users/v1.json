@@ -213,7 +213,7 @@
             }
           },
           "400": {
-            "description": "1: Display name is too short\r\n2: Display name is too long\r\n3: Display name contains invalid characters\r\n4: Display name has been moderated\r\n6: Request must contain a birthdate"
+            "description": "1: Display name is too short\r\n2: Display name is too long\r\n3: Display name contains invalid characters\r\n4: Display name has been moderated\r\n6: Request must contain a birthdate\r\n8: Display name has too many combinations of character sets"
           },
           "429": {
             "description": "5: Display name updates for this user have been throttled"
@@ -384,7 +384,7 @@
             }
           },
           "400": {
-            "description": "1: Display name is too short\r\n2: Display name is too long\r\n3: Display name contains invalid characters\r\n4: Display name has been moderated"
+            "description": "1: Display name is too short\r\n2: Display name is too long\r\n3: Display name contains invalid characters\r\n4: Display name has been moderated\r\n8: Display name has too many combinations of character sets"
           },
           "401": {
             "description": "0: Authorization has been denied for this request."
@@ -787,7 +787,7 @@
             }
           },
           "400": {
-            "description": "1: Display name is too short\r\n2: Display name is too long\r\n3: Display name contains invalid characters\r\n4: Display name has been moderated"
+            "description": "1: Display name is too short\r\n2: Display name is too long\r\n3: Display name contains invalid characters\r\n4: Display name has been moderated\r\n8: Display name has too many combinations of character sets"
           },
           "401": {
             "description": "0: Authorization has been denied for this request."
