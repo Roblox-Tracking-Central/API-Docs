@@ -967,71 +967,6 @@
     }
   },
   "definitions": {
-    "Avatar.Common.Models.AccessoryPositionModel": {
-      "type": "object",
-      "properties": {
-        "xPosition": {
-          "format": "double",
-          "type": "number"
-        },
-        "yPosition": {
-          "format": "double",
-          "type": "number"
-        },
-        "zPosition": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Avatar.Common.Models.AccessoryRefinementModel": {
-      "type": "object",
-      "properties": {
-        "position": {
-          "$ref": "#/definitions/Avatar.Common.Models.AccessoryPositionModel"
-        },
-        "rotation": {
-          "$ref": "#/definitions/Avatar.Common.Models.AccessoryRotationModel"
-        },
-        "scale": {
-          "$ref": "#/definitions/Avatar.Common.Models.AccessoryScaleModel"
-        }
-      }
-    },
-    "Avatar.Common.Models.AccessoryRotationModel": {
-      "type": "object",
-      "properties": {
-        "xRotation": {
-          "format": "double",
-          "type": "number"
-        },
-        "yRotation": {
-          "format": "double",
-          "type": "number"
-        },
-        "zRotation": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
-    "Avatar.Common.Models.AccessoryScaleModel": {
-      "type": "object",
-      "properties": {
-        "xScale": {
-          "format": "double",
-          "type": "number"
-        },
-        "yScale": {
-          "format": "double",
-          "type": "number"
-        },
-        "zScale": {
-          "format": "double",
-          "type": "number"
-        }
-      }
-    },
     "Roblox.Api.Avatar.Controllers.V1.AvatarController.EmptyResponse": {
       "description": "Empty response, will be in WebAPI base soon",
       "type": "object"
@@ -1331,7 +1266,7 @@
           "type": "array",
           "items": {
             "format": "int32",
-            "description": " ['Image' = 1, 'TShirt' = 2, 'Audio' = 3, 'Mesh' = 4, 'Lua' = 5, 'HTML' = 6, 'Text' = 7, 'Hat' = 8, 'Place' = 9, 'Model' = 10, 'Shirt' = 11, 'Pants' = 12, 'Decal' = 13, 'Avatar' = 16, 'Head' = 17, 'Face' = 18, 'Gear' = 19, 'Badge' = 21, 'GroupEmblem' = 22, 'Animation' = 24, 'Arms' = 25, 'Legs' = 26, 'Torso' = 27, 'RightArm' = 28, 'LeftArm' = 29, 'LeftLeg' = 30, 'RightLeg' = 31, 'Package' = 32, 'YouTubeVideo' = 33, 'GamePass' = 34, 'App' = 35, 'Code' = 37, 'Plugin' = 38, 'SolidModel' = 39, 'MeshPart' = 40, 'HairAccessory' = 41, 'FaceAccessory' = 42, 'NeckAccessory' = 43, 'ShoulderAccessory' = 44, 'FrontAccessory' = 45, 'BackAccessory' = 46, 'WaistAccessory' = 47, 'ClimbAnimation' = 48, 'DeathAnimation' = 49, 'FallAnimation' = 50, 'IdleAnimation' = 51, 'JumpAnimation' = 52, 'RunAnimation' = 53, 'SwimAnimation' = 54, 'WalkAnimation' = 55, 'PoseAnimation' = 56, 'LocalizationTableManifest' = 59, 'LocalizationTableTranslation' = 60, 'EmoteAnimation' = 61, 'Video' = 62, 'TexturePack' = 63, 'TShirtAccessory' = 64, 'ShirtAccessory' = 65, 'PantsAccessory' = 66, 'JacketAccessory' = 67, 'SweaterAccessory' = 68, 'ShortsAccessory' = 69, 'LeftShoeAccessory' = 70, 'RightShoeAccessory' = 71, 'DressSkirtAccessory' = 72, 'FontFamily' = 73, 'FontFace' = 74, 'MeshHiddenSurfaceRemoval' = 75, 'EyebrowAccessory' = 76, 'EyelashAccessory' = 77, 'MoodAnimation' = 78, 'DynamicHead' = 79, 'CodeSnippet' = 80]",
+            "description": " ['Image' = 1, 'TShirt' = 2, 'Audio' = 3, 'Mesh' = 4, 'Lua' = 5, 'HTML' = 6, 'Text' = 7, 'Hat' = 8, 'Place' = 9, 'Model' = 10, 'Shirt' = 11, 'Pants' = 12, 'Decal' = 13, 'Avatar' = 16, 'Head' = 17, 'Face' = 18, 'Gear' = 19, 'Badge' = 21, 'GroupEmblem' = 22, 'Animation' = 24, 'Arms' = 25, 'Legs' = 26, 'Torso' = 27, 'RightArm' = 28, 'LeftArm' = 29, 'LeftLeg' = 30, 'RightLeg' = 31, 'Package' = 32, 'YouTubeVideo' = 33, 'GamePass' = 34, 'App' = 35, 'Code' = 37, 'Plugin' = 38, 'SolidModel' = 39, 'MeshPart' = 40, 'HairAccessory' = 41, 'FaceAccessory' = 42, 'NeckAccessory' = 43, 'ShoulderAccessory' = 44, 'FrontAccessory' = 45, 'BackAccessory' = 46, 'WaistAccessory' = 47, 'ClimbAnimation' = 48, 'DeathAnimation' = 49, 'FallAnimation' = 50, 'IdleAnimation' = 51, 'JumpAnimation' = 52, 'RunAnimation' = 53, 'SwimAnimation' = 54, 'WalkAnimation' = 55, 'PoseAnimation' = 56, 'LocalizationTableManifest' = 59, 'LocalizationTableTranslation' = 60, 'EmoteAnimation' = 61, 'Video' = 62, 'TexturePack' = 63, 'TShirtAccessory' = 64, 'ShirtAccessory' = 65, 'PantsAccessory' = 66, 'JacketAccessory' = 67, 'SweaterAccessory' = 68, 'ShortsAccessory' = 69, 'LeftShoeAccessory' = 70, 'RightShoeAccessory' = 71, 'DressSkirtAccessory' = 72, 'FontFamily' = 73, 'FontFace' = 74, 'MeshHiddenSurfaceRemoval' = 75, 'EyebrowAccessory' = 76, 'EyelashAccessory' = 77, 'MoodAnimation' = 78, 'DynamicHead' = 79, 'CodeSnippet' = 80, 'AdsVideo' = 81]",
             "enum": [
               1,
               2,
@@ -1405,7 +1340,8 @@
               77,
               78,
               79,
-              80
+              80,
+              81
             ],
             "type": "integer"
           }
@@ -1415,223 +1351,226 @@
           "type": "object",
           "properties": {
             "Image": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "TShirt": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Audio": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Mesh": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Lua": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "HTML": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Text": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Hat": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Place": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Model": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Shirt": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Pants": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Decal": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Avatar": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Head": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Face": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Gear": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Badge": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "GroupEmblem": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Animation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Arms": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Legs": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Torso": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "RightArm": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "LeftArm": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "LeftLeg": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "RightLeg": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Package": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "YouTubeVideo": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "GamePass": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "App": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Code": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Plugin": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "SolidModel": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "MeshPart": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "HairAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "FaceAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "NeckAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "ShoulderAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "FrontAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "BackAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "WaistAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "ClimbAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "DeathAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "FallAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "IdleAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "JumpAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "RunAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "SwimAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "WalkAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "PoseAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "LocalizationTableManifest": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "LocalizationTableTranslation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "EmoteAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Video": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "TexturePack": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "TShirtAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "ShirtAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "PantsAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "JacketAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "SweaterAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "ShortsAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "LeftShoeAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "RightShoeAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "DressSkirtAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "FontFamily": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "FontFace": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "MeshHiddenSurfaceRemoval": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "EyebrowAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "EyelashAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "MoodAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "DynamicHead": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "CodeSnippet": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
+            },
+            "AdsVideo": {
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             }
           }
         },
@@ -1640,223 +1579,226 @@
           "type": "object",
           "properties": {
             "Image": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "TShirt": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Audio": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Mesh": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Lua": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "HTML": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Text": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Hat": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Place": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Model": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Shirt": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Pants": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Decal": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Avatar": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Head": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Face": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Gear": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Badge": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "GroupEmblem": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Animation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Arms": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Legs": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Torso": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "RightArm": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "LeftArm": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "LeftLeg": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "RightLeg": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Package": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "YouTubeVideo": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "GamePass": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "App": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Code": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Plugin": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "SolidModel": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "MeshPart": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "HairAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "FaceAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "NeckAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "ShoulderAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "FrontAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "BackAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "WaistAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "ClimbAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "DeathAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "FallAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "IdleAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "JumpAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "RunAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "SwimAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "WalkAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "PoseAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "LocalizationTableManifest": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "LocalizationTableTranslation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "EmoteAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "Video": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "TexturePack": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "TShirtAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "ShirtAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "PantsAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "JacketAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "SweaterAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "ShortsAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "LeftShoeAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "RightShoeAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "DressSkirtAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "FontFamily": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "FontFace": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "MeshHiddenSurfaceRemoval": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "EyebrowAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "EyelashAccessory": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "MoodAnimation": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "DynamicHead": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             },
             "CodeSnippet": {
-              "$ref": "#/definitions/Avatar.Common.Models.AccessoryRefinementModel"
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
+            },
+            "AdsVideo": {
+              "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRefinementModel"
             }
           }
         },
@@ -2252,6 +2194,71 @@
         "success": {
           "description": "Whether or not all the outfit contents were successfully worn",
           "type": "boolean"
+        }
+      }
+    },
+    "Roblox.Avatarcore.Common.Models.AccessoryPositionModel": {
+      "type": "object",
+      "properties": {
+        "xPosition": {
+          "format": "float",
+          "type": "number"
+        },
+        "yPosition": {
+          "format": "float",
+          "type": "number"
+        },
+        "zPosition": {
+          "format": "float",
+          "type": "number"
+        }
+      }
+    },
+    "Roblox.Avatarcore.Common.Models.AccessoryRefinementModel": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryPositionModel"
+        },
+        "rotation": {
+          "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryRotationModel"
+        },
+        "scale": {
+          "$ref": "#/definitions/Roblox.Avatarcore.Common.Models.AccessoryScaleModel"
+        }
+      }
+    },
+    "Roblox.Avatarcore.Common.Models.AccessoryRotationModel": {
+      "type": "object",
+      "properties": {
+        "xRotation": {
+          "format": "float",
+          "type": "number"
+        },
+        "yRotation": {
+          "format": "float",
+          "type": "number"
+        },
+        "zRotation": {
+          "format": "float",
+          "type": "number"
+        }
+      }
+    },
+    "Roblox.Avatarcore.Common.Models.AccessoryScaleModel": {
+      "type": "object",
+      "properties": {
+        "xScale": {
+          "format": "float",
+          "type": "number"
+        },
+        "yScale": {
+          "format": "float",
+          "type": "number"
+        },
+        "zScale": {
+          "format": "float",
+          "type": "number"
         }
       }
     },
