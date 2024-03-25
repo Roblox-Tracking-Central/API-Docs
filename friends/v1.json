@@ -550,8 +550,7 @@
             "format": "int32",
             "enum": [
               0,
-              1,
-              2
+              1
             ]
           },
           {
@@ -659,8 +658,7 @@
             "format": "int32",
             "enum": [
               0,
-              1,
-              2
+              1
             ]
           }
         ],
@@ -1829,43 +1827,6 @@
         }
       }
     },
-    "Roblox.Paging.ExclusiveStartKeyCursor[System.String]": {
-      "type": "object",
-      "properties": {
-        "key": {
-          "type": "string"
-        },
-        "sortOrder": {
-          "format": "int32",
-          "description": " ['Asc' = 1, 'Desc' = 2]",
-          "enum": [
-            1,
-            2
-          ],
-          "type": "integer"
-        },
-        "pagingDirection": {
-          "format": "int32",
-          "description": " ['Forward' = 1, 'Backward' = 2]",
-          "enum": [
-            1,
-            2
-          ],
-          "type": "integer"
-        },
-        "pageNumber": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "discriminator": {
-          "type": "string"
-        },
-        "count": {
-          "format": "int32",
-          "type": "integer"
-        }
-      }
-    },
     "Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[Roblox.Web.Friends.FriendRequestsPlatformExclusiveStartKey]": {
       "type": "object",
       "properties": {
@@ -2032,17 +1993,6 @@
           "items": {
             "$ref": "#/definitions/Roblox.Friends.Api.Models.Response.UserResponse"
           }
-        }
-      }
-    },
-    "System.ValueTuple[Roblox.Web.WebAPI.ExclusiveStartRequest[System.Int64],Roblox.Paging.ExclusiveStartKeyCursor[System.String]]": {
-      "type": "object",
-      "properties": {
-        "Item1": {
-          "$ref": "#/definitions/Roblox.Web.WebAPI.ExclusiveStartRequest[System.Int64]"
-        },
-        "Item2": {
-          "$ref": "#/definitions/Roblox.Paging.ExclusiveStartKeyCursor[System.String]"
         }
       }
     }
