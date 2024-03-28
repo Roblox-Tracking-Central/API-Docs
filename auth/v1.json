@@ -2898,10 +2898,6 @@
           "description": "Birthday",
           "type": "string"
         },
-        "displayName": {
-          "description": "Display Name",
-          "type": "string"
-        },
         "isTosAgreementBoxChecked": {
           "description": "Whether the ToS agreement box was checked",
           "type": "boolean"
