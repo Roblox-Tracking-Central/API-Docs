@@ -250,18 +250,6 @@
             "in": "query",
             "name": "permissionContext",
             "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "doNotFallbackToBaselineRepresentation",
-            "type": "boolean",
-            "default": false
-          },
-          {
-            "in": "query",
-            "name": "contentRepresentationPriorityList",
-            "type": "string",
-            "default": ""
           }
         ],
         "responses": {
@@ -478,18 +466,6 @@
             "name": "expectedAssetType",
             "type": "string",
             "default": ""
-          },
-          {
-            "in": "query",
-            "name": "doNotFallbackToBaselineRepresentation",
-            "type": "boolean",
-            "default": false
-          },
-          {
-            "in": "query",
-            "name": "contentRepresentationPriorityList",
-            "type": "string",
-            "default": ""
           }
         ],
         "responses": {
@@ -605,18 +581,6 @@
           {
             "in": "query",
             "name": "expectedAssetType",
-            "type": "string",
-            "default": ""
-          },
-          {
-            "in": "query",
-            "name": "doNotFallbackToBaselineRepresentation",
-            "type": "boolean",
-            "default": false
-          },
-          {
-            "in": "query",
-            "name": "contentRepresentationPriorityList",
             "type": "string",
             "default": ""
           }
@@ -1102,12 +1066,6 @@
         },
         "roblox-assetFormat": {
           "type": "string"
-        },
-        "contentRepresentationPriorityList": {
-          "type": "string"
-        },
-        "doNotFallbackToBaselineRepresentation": {
-          "type": "boolean"
         }
       }
     },
