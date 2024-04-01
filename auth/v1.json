@@ -784,6 +784,49 @@
         }
       }
     },
+    "/v1/validators/recommendedUsernameFromDisplayName": {
+      "get": {
+        "tags": [
+          "Validators"
+        ],
+        "summary": "Validates the given display name, and if valid, will convert it to a valid username and return suggested username(s) if available.",
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "DisplayName",
+            "description": "Gets or sets the display name, which will create a recommended username if available.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "BirthDay",
+            "description": "Gets or sets the birth day.",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.RecommendedUsernameResponse"
+            }
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "Validators:GetRecommendedUsernameFromDisplayName"
+          ]
+        }
+      }
+    },
     "/v1/validators/username": {
       "get": {
         "tags": [
@@ -2896,6 +2939,10 @@
         "birthday": {
           "format": "date-time",
           "description": "Birthday",
+          "type": "string"
+        },
+        "displayName": {
+          "description": "Display Name",
           "type": "string"
         },
         "isTosAgreementBoxChecked": {
