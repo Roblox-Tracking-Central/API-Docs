@@ -418,7 +418,7 @@
         "tags": [
           "Trades"
         ],
-        "summary": "Expires Outdated Inbound Trades for User",
+        "summary": "Deprecated. TradeSession are automatically set to expire while the inbound/outbound trades are fetched.\r\nExpires Outdated Inbound Trades for User",
         "produces": [
           "application/json",
           "text/json"
@@ -506,7 +506,7 @@
     }
   },
   "definitions": {
-    "Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[System.Int32]": {
+    "Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[System.Int64]": {
       "type": "object",
       "properties": {
         "SortOrder": {
@@ -807,11 +807,11 @@
     "Roblox.Web.WebAPI.ApiEmptyResponseModel": {
       "type": "object"
     },
-    "Roblox.Web.WebAPI.ExclusiveStartRequest[System.Int32]": {
+    "Roblox.Web.WebAPI.ExclusiveStartRequest[System.Int64]": {
       "type": "object",
       "properties": {
         "ExclusiveStartKeyInfo": {
-          "$ref": "#/definitions/Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[System.Int32]"
+          "$ref": "#/definitions/Roblox.Platform.Core.ExclusiveStartPaging.IExclusiveStartKeyInfo[System.Int64]"
         },
         "CursorRecipe": {
           "type": "string"
