@@ -1696,7 +1696,7 @@
             "description": "0: Authorization has been denied for this request."
           },
           "403": {
-            "description": "0: Token Validation Failed\r\n5: You must pass the captcha test before joining this group.\r\n6: You are already in the maximum number of groups.\r\n9: You do not have the builders club membership necessary to join this group.\r\n14: You cannot join a closed group."
+            "description": "0: Token Validation Failed\r\n6: You are already in the maximum number of groups.\r\n9: You do not have the builders club membership necessary to join this group.\r\n14: You cannot join a closed group."
           },
           "409": {
             "description": "7: You have already requested to join this group.\r\n8: You are already a member of this group."
@@ -1834,7 +1834,7 @@
             "description": "0: Authorization has been denied for this request."
           },
           "403": {
-            "description": "0: Token Validation Failed\r\n2: You do not have permission to access this group wall.\r\n7: Captcha must be solved."
+            "description": "0: Token Validation Failed\r\n2: You do not have permission to access this group wall."
           },
           "429": {
             "description": "4: You are posting too fast, please try again in a few minutes."

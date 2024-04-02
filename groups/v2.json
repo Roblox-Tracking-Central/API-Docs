@@ -171,7 +171,7 @@
             "description": "0: Authorization has been denied for this request."
           },
           "403": {
-            "description": "0: Token Validation Failed\r\n2: You do not have permission to access this group wall.\r\n7: Captcha must be solved."
+            "description": "0: Token Validation Failed\r\n2: You do not have permission to access this group wall."
           },
           "429": {
             "description": "4: You are posting too fast, please try again in a few minutes."
