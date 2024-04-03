@@ -160,6 +160,13 @@
               "type": "string"
             },
             "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "gameId",
+            "description": "Optional gameId. If not passed in, we'll return the default list of languages allowed.",
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "responses": {
