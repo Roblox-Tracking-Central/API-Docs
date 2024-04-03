@@ -1238,7 +1238,7 @@
           "type": "array",
           "items": {
             "format": "int32",
-            "description": " ['R6' = 1, 'R15' = 3]",
+            "description": "https://confluence.roblox.com/display/PLATFORM/Avatar+Project+2016\r\nWhat avatar type does the player prefer to have? ['R6' = 1, 'R15' = 3]",
             "enum": [
               1,
               3
