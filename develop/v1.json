@@ -41,8 +41,10 @@
             }
           }
         },
+        "deprecated": true,
         "properties": {
           "internal": false,
+          "obsoleteMessage": "Please use toolbox service to get asset voting information.",
           "metricIds": [
             "Assets:GetAssetVoting"
           ]
