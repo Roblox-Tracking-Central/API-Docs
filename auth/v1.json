@@ -1077,10 +1077,13 @@
         "tags": [
           "ExternalIdentitiesGateway"
         ],
-        "summary": "Signs a user up for Roblox and links the account to the authenticated external provider ID",
+        "summary": "Signs a user up for Roblox and links the account to the authenticated external provider ID.",
         "consumes": [
           "application/json",
           "text/json"
+        ],
+        "produces": [
+          "application/json"
         ],
         "parameters": [
           {
@@ -1094,7 +1097,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Roblox.Authentication.Api.Models.Response.ExternalIdentityGateway.ExternalIdentityAccessResponse"
+            }
           }
         },
         "properties": {
@@ -2767,6 +2773,25 @@
           "type": "string"
         },
         "serverNonce": {
+          "type": "string"
+        }
+      }
+    },
+    "Roblox.Authentication.Api.Models.Response.ExternalIdentityGateway.ExternalIdentityAccessResponse": {
+      "description": "A success response from an enterprise SSO login request.",
+      "type": "object",
+      "properties": {
+        "placeId": {
+          "format": "int64",
+          "description": "The place ID that the current user should be prompted to join.",
+          "type": "integer"
+        },
+        "isolationContext": {
+          "description": "The isolation context used for matchmaking.",
+          "type": "string"
+        },
+        "launchData": {
+          "description": "The launch data to feed that will be used by the experience.",
           "type": "string"
         }
       }
