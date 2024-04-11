@@ -2136,7 +2136,7 @@
           "400": {
             "description": "3: The user is invalid or does not exist."
           },
-          "401": {
+          "403": {
             "description": "3: The user is invalid or does not exist."
           }
         },
