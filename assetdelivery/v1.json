@@ -1038,20 +1038,6 @@
     }
   },
   "definitions": {
-    "Roblox.Web.Assets.AssetContentRepresentationSpecifier": {
-      "type": "object",
-      "properties": {
-        "format": {
-          "type": "string"
-        },
-        "majorVersion": {
-          "type": "string"
-        },
-        "fidelity": {
-          "type": "string"
-        }
-      }
-    },
     "Roblox.Web.Assets.BatchAssetRequestItem": {
       "type": "object",
       "properties": {
@@ -1179,9 +1165,6 @@
         "IsArchived": {
           "type": "boolean",
           "readOnly": true
-        },
-        "ContentRepresentationSpecifier": {
-          "$ref": "#/definitions/Roblox.Web.Assets.AssetContentRepresentationSpecifier"
         }
       }
     }
