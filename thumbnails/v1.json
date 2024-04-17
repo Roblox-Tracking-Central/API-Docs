@@ -489,7 +489,8 @@
             "type": "string",
             "default": "Png",
             "enum": [
-              "Png"
+              "Png",
+              "Webp"
             ]
           },
           {
