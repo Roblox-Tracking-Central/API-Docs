@@ -205,7 +205,7 @@
     "/v1/users/{targetUserId}/followers": {
       "get": {
         "tags": [
-          "Friends"
+          "Followings"
         ],
         "summary": "Get all users that follow user with targetUserId in page response format",
         "produces": [
@@ -274,7 +274,7 @@
         "properties": {
           "internal": false,
           "metricIds": [
-            "Friends:GetFollowers"
+            "Followings:GetFollowers"
           ]
         }
       }
@@ -282,7 +282,7 @@
     "/v1/users/{targetUserId}/followers/count": {
       "get": {
         "tags": [
-          "Friends"
+          "Followings"
         ],
         "summary": "Get the number of following a user has",
         "produces": [
@@ -313,7 +313,7 @@
         "properties": {
           "internal": false,
           "metricIds": [
-            "Friends:GetFollowersCount"
+            "Followings:GetFollowersCount"
           ]
         }
       }
@@ -321,7 +321,7 @@
     "/v1/users/{targetUserId}/followings": {
       "get": {
         "tags": [
-          "Friends"
+          "Followings"
         ],
         "summary": "Get all users that user with targetUserId is following in page response format",
         "produces": [
@@ -390,7 +390,7 @@
         "properties": {
           "internal": false,
           "metricIds": [
-            "Friends:GetFollowings"
+            "Followings:GetFollowings"
           ]
         }
       }
@@ -398,7 +398,7 @@
     "/v1/users/{targetUserId}/followings/count": {
       "get": {
         "tags": [
-          "Friends"
+          "Followings"
         ],
         "summary": "Get the number of following a user has",
         "produces": [
@@ -429,7 +429,7 @@
         "properties": {
           "internal": false,
           "metricIds": [
-            "Friends:GetFollowingCount"
+            "Followings:GetFollowingCount"
           ]
         }
       }
@@ -1091,7 +1091,7 @@
     "/v1/users/{targetUserId}/follow": {
       "post": {
         "tags": [
-          "Friends"
+          "Followings"
         ],
         "summary": "Creates the following between a user and user with targetUserId",
         "consumes": [
@@ -1143,7 +1143,7 @@
         "properties": {
           "internal": false,
           "metricIds": [
-            "Friends:FollowUser"
+            "Followings:FollowUser"
           ]
         }
       }
@@ -1151,7 +1151,7 @@
     "/v1/users/{targetUserId}/followings/recount": {
       "post": {
         "tags": [
-          "Friends"
+          "Followings"
         ],
         "summary": "Recompute the number of followings for a user by comparing the existing counter to list of followings",
         "produces": [
@@ -1191,7 +1191,7 @@
         "properties": {
           "internal": false,
           "metricIds": [
-            "Friends:RecountFollowingsCount"
+            "Followings:RecountFollowingsCount"
           ]
         }
       }
@@ -1260,7 +1260,7 @@
     "/v1/users/{targetUserId}/unfollow": {
       "post": {
         "tags": [
-          "Friends"
+          "Followings"
         ],
         "summary": "Deletes the following between a user and user with targetUserId",
         "produces": [
@@ -1300,7 +1300,7 @@
         "properties": {
           "internal": false,
           "metricIds": [
-            "Friends:UnFollowUser"
+            "Followings:UnFollowUser"
           ]
         }
       }
