@@ -458,6 +458,9 @@
           "description": "The integer status code",
           "type": "integer"
         },
+        "statusData": {
+          "$ref": "#/definitions/Roblox.Web.GameJoin.StatusData"
+        },
         "joinScriptUrl": {
           "description": "The URL to get the join 'script' from\r\nset when status == 2 (Joining)",
           "type": "string"
@@ -778,6 +781,33 @@
         },
         "settings": {
           "description": "settings"
+        }
+      }
+    },
+    "Roblox.Web.GameJoin.StatusData": {
+      "type": "object",
+      "properties": {
+        "creatorExperienceBan": {
+          "$ref": "#/definitions/Roblox.Web.GameJoin.StatusData.CreatorExperienceBanData"
+        }
+      }
+    },
+    "Roblox.Web.GameJoin.StatusData.CreatorExperienceBanData": {
+      "type": "object",
+      "properties": {
+        "startTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "duration": {
+          "format": "date-span",
+          "type": "string"
+        },
+        "displayReason": {
+          "type": "string"
+        },
+        "isInherited": {
+          "type": "boolean"
         }
       }
     },
