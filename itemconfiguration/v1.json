@@ -69,7 +69,7 @@
             }
           },
           "400": {
-            "description": "5: Invalid assetType"
+            "description": "5: Invalid assetType\r\n10: Invalid Asset Category"
           },
           "401": {
             "description": "0: Authorization has been denied for this request."
