@@ -132,10 +132,6 @@
         "showAppealsProcessLink": {
           "description": "Whether or not to show the learn more message for the European Union Digital Services Act.",
           "type": "boolean"
-        },
-        "agreedCheckBoxExperimentVariant": {
-          "description": "Gets the IXP NotApproved content experiment variant",
-          "type": "string"
         }
       }
     },
