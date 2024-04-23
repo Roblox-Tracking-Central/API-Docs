@@ -401,6 +401,46 @@
         }
       }
     },
+    "/v1/users/{userId}/badges/{badgeId}/awarded-date": {
+      "get": {
+        "tags": [
+          "BadgeAwards"
+        ],
+        "summary": "Gets timestamp for when a single badge was awarded to a user.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "User id.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "path",
+            "name": "badgeId",
+            "description": "Badge id.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "4: User is invalid or does not exist."
+          }
+        },
+        "properties": {
+          "internal": false,
+          "metricIds": [
+            "BadgeAwards:GetBadgeAwardDate"
+          ]
+        }
+      }
+    },
     "/v1/users/{userId}/badges/awarded-dates": {
       "get": {
         "tags": [
