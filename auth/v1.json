@@ -825,47 +825,6 @@
             "Validators:GetRecommendedUsernameFromDisplayName"
           ]
         }
-      },
-      "post": {
-        "tags": [
-          "Validators"
-        ],
-        "summary": "Validates the given display name, and if valid, will convert it to a valid username and return suggested username(s) if available.\r\n            \r\nThis is a POST request and explicitly does not receive the parameter values from the query",
-        "consumes": [
-          "application/json",
-          "text/json"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "requestBody",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Roblox.Authentication.Api.Models.RecommendedUsernameFromDisplayNameRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Authentication.Api.Models.RecommendedUsernameResponse"
-            }
-          },
-          "403": {
-            "description": "0: Token Validation Failed"
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "Validators:PostRecommendedUsernameFromDisplayName"
-          ]
-        }
       }
     },
     "/v1/validators/username": {
@@ -907,47 +866,6 @@
           "internal": false,
           "metricIds": [
             "Validators:GetRecommendedUsername"
-          ]
-        }
-      },
-      "post": {
-        "tags": [
-          "Validators"
-        ],
-        "summary": "Tries to get a valid username if the current username is taken\r\nThis is a POST request and explicitly does not receive the parameter values from the query",
-        "consumes": [
-          "application/json",
-          "text/json"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "requestBody",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Roblox.Authentication.Api.Models.RecommendedUsernameRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Roblox.Authentication.Api.Models.RecommendedUsernameResponse"
-            }
-          },
-          "403": {
-            "description": "0: Token Validation Failed"
-          }
-        },
-        "properties": {
-          "internal": false,
-          "metricIds": [
-            "Validators:PostRecommendedUsername"
           ]
         }
       }
@@ -2462,36 +2380,6 @@
         },
         "identifier": {
           "description": "The social User ID.",
-          "type": "string"
-        }
-      }
-    },
-    "Roblox.Authentication.Api.Models.RecommendedUsernameFromDisplayNameRequest": {
-      "description": "A request model to get a recommended username from a display name.",
-      "type": "object",
-      "properties": {
-        "displayName": {
-          "description": "Gets or sets the display name, which will create a recommended username if available.",
-          "type": "string"
-        },
-        "birthday": {
-          "format": "date-time",
-          "description": "Gets or sets the birth day.",
-          "type": "string"
-        }
-      }
-    },
-    "Roblox.Authentication.Api.Models.RecommendedUsernameRequest": {
-      "description": "A request model to generated a username",
-      "type": "object",
-      "properties": {
-        "username": {
-          "description": "Gets or sets the username to use as the base username provided by the user",
-          "type": "string"
-        },
-        "birthday": {
-          "format": "date-time",
-          "description": "Gets or sets the birth day.",
           "type": "string"
         }
       }
