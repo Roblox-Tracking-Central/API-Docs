@@ -491,24 +491,6 @@
         }
       }
     },
-    "Roblox.Api.Develop.Models.UniversePluginPermissions": {
-      "description": "Plugin permissions for third party.\r\nCurrently, this is a part of configuration, but will be separated into permission system in the future.",
-      "type": "object",
-      "properties": {
-        "IsThirdPartyTeleportAllowed": {
-          "description": "Indicates if it allows game server to teleport to other games out of your universe.",
-          "type": "boolean"
-        },
-        "IsThirdPartyAssetAllowed": {
-          "description": "Indicates if it allows players to purchase items not created by you.",
-          "type": "boolean"
-        },
-        "IsThirdPartyPurchaseAllowed": {
-          "description": "Indicates if it allows script execution or insertion of models not under your control.",
-          "type": "boolean"
-        }
-      }
-    },
     "Roblox.Api.Develop.Models.UniverseSettingsRequestV2": {
       "description": "Model for UniverseSettings patch requests",
       "type": "object",
@@ -640,7 +622,7 @@
           "type": "boolean"
         },
         "permissions": {
-          "$ref": "#/definitions/Roblox.Api.Develop.Models.UniversePluginPermissions"
+          "$ref": "#/definitions/Roblox.UniversePluginPermissionAuthority.Models.UniversePluginPermissions"
         },
         "optInRegions": {
           "description": "A list of opt in region.",
@@ -813,7 +795,7 @@
           "type": "boolean"
         },
         "permissions": {
-          "$ref": "#/definitions/Roblox.Api.Develop.Models.UniversePluginPermissions"
+          "$ref": "#/definitions/Roblox.UniversePluginPermissionAuthority.Models.UniversePluginPermissions"
         }
       }
     },
@@ -859,6 +841,20 @@
           "type": "integer"
         },
         "isPlayerChoice": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Roblox.UniversePluginPermissionAuthority.Models.UniversePluginPermissions": {
+      "type": "object",
+      "properties": {
+        "IsThirdPartyTeleportAllowed": {
+          "type": "boolean"
+        },
+        "IsThirdPartyAssetAllowed": {
+          "type": "boolean"
+        },
+        "IsThirdPartyPurchaseAllowed": {
           "type": "boolean"
         }
       }
